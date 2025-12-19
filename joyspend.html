@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoySpend - Track Joy, Not Just Expenses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #FFFFFF; 
+            color: #1E293B;
+            scroll-behavior: smooth;
+        }
+
+        .joy-blue { background-color: #2D5BFF; }
+        .joy-blue-text { color: #2D5BFF; }
+        .joy-red { background-color: #FF5252; }
+        .joy-orange { background-color: #FF9800; }
+        
+        /* Smooth subtle shadows for cards */
+        .flat-card {
+            background: #FFFFFF;
+            border: 1px solid #F1F5F9;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .flat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 3D Perspective for the Hero Card */
+        .perspective-1000 {
+            perspective: 1200px;
+        }
+
+        .tilt-card {
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        /* Custom Rounded Corners from App */
+        .rounded-app { border-radius: 1.5rem; }
+        .rounded-button { border-radius: 9999px; }
+
+        @keyframes float {
+            0% { transform: translateZ(20px) translateY(0px); }
+            50% { transform: translateZ(20px) translateY(-10px); }
+            100% { transform: translateZ(20px) translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .badge-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        /* Store Badge Styles */
+        .store-badge {
+            height: 48px;
+            width: auto;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- JOYSPEND LOGO -->
+                <div class="w-10 h-10 joy-blue rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 7H5C3.89543 7 3 7.89543 3 9V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V9C21 7.89543 20.1046 7 19 7Z" fill="white"/>
+                        <path d="M19 7H5C3.89543 7 3 7.89543 3 9M19 7C20.1046 7 21 7.89543 21 9V11C21 11.5523 20.5523 12 20 12H18C17.4477 12 17 11.5523 17 11V10C17 9.44772 16.5523 9 16 9H3" stroke="#2D5BFF" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8 13.5C8.5 14.5 9.5 15.5 12 15.5C14.5 15.5 15.5 14.5 16 13.5" stroke="#2D5BFF" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
+            </div>
+            <div class="hidden md:flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
+                <a href="#home" class="hover:joy-blue-text transition-colors">Home</a>
+                <a href="#features" class="hover:joy-blue-text transition-colors">Features</a>
+                <a href="#privacy" class="hover:joy-blue-text transition-colors">Privacy</a>
+                <a href="#support" class="hover:joy-blue-text transition-colors">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="max-w-6xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-block bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-widest mb-6">
+                ✨ Mindful Budgeting
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                Spend on what <span class="joy-blue-text underline decoration-blue-200">matters.</span>
+            </h1>
+            <p class="text-xl text-slate-500 leading-relaxed max-w-lg mb-10">
+                JoySpend is the first expense tracker that focuses on how your purchases make you <span class="text-slate-900 font-semibold">feel</span>. Track your "Joy-Per-Spend" and master your emotional budget.
+            </p>
+            
+            <!-- Store Badges -->
+            <div class="flex flex-wrap gap-4 items-center">
+                <a href="javascript:void(0)" onclick="openBothStores()" class="badge-hover transition-all inline-block">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7ea5941973830573066a4a5cf92a08ab" alt="Download on the App Store" class="store-badge">
+                </a>
+                
+                <a href="javascript:void(0)" onclick="openBothStores()" class="badge-hover transition-all inline-block">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge" style="height: 64px; margin-left: -8px;">
+                </a>
+            </div>
+        </div>
+
+        <!-- 3D Phone Mockup (Flat Design) -->
+        <div class="perspective-1000 flex justify-center items-center">
+            <div id="hero-card" class="tilt-card w-72 h-[580px] bg-slate-900 rounded-[3.5rem] p-3 shadow-2xl relative cursor-pointer group">
+                <div class="bg-white w-full h-full rounded-[2.8rem] overflow-hidden p-6 flex flex-col">
+                    <!-- App Status Bar -->
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="w-8 h-8 bg-slate-100 rounded-full"></div>
+                        <div class="text-[10px] font-bold text-slate-300">INSIGHTS</div>
+                        <div class="w-4 h-4 bg-slate-100 rounded-sm"></div>
+                    </div>
+                    
+                    <!-- App Card from Screenshot -->
+                    <div class="joy-blue p-5 rounded-3xl text-white mb-6 shadow-xl shadow-blue-500/20">
+                        <div class="text-[10px] opacity-70 font-bold uppercase tracking-wider mb-1">Total Balance</div>
+                        <div class="text-2xl font-black">$2,450.00</div>
+                    </div>
+
+                    <div class="flex-1 space-y-3">
+                        <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Recent Activity</h4>
+                        <div class="p-4 bg-slate-50 rounded-2xl flex justify-between items-center border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">🍣</span>
+                                <span class="text-[11px] font-bold">Dinner Party</span>
+                            </div>
+                            <span class="text-[11px] font-black text-red-500">-$120.00</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl flex justify-between items-center border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">🎁</span>
+                                <span class="text-[11px] font-bold">Gift Store</span>
+                            </div>
+                            <span class="text-[11px] font-black text-red-500">-$45.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Joy Indicator -->
+                    <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                        <div class="text-[9px] font-extrabold text-blue-600 uppercase mb-2">Current Joy Rating</div>
+                        <div class="flex justify-center gap-1">
+                            <span class="text-orange-400">★</span><span class="text-orange-400">★</span><span class="text-orange-400">★</span><span class="text-orange-400">★</span><span class="text-slate-200">★</span>
+                        </div>
+                        <div class="text-2xl font-black text-slate-800 mt-1">4.2</div>
+                    </div>
+                </div>
+
+                <!-- Floating Labels (3D) -->
+                <div class="absolute -right-12 top-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 floating-element" style="transform: translateZ(60px)">
+                    <span class="joy-orange w-8 h-8 rounded-lg flex items-center justify-center text-white">🔥</span>
+                    <span class="text-xs font-bold">New Joy Milestone!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="bg-slate-50 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Financial Clarity, Emotional Growth</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-lg">Your spending habits say a lot about you. We help you listen to what they're saying.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 joy-blue rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-blue-500/20 text-white">😊</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Joy Ratings</h3>
+                    <p class="text-slate-500 leading-relaxed">Rate every expense on a scale of 1-5. Find out which purchases actually improve your quality of life.</p>
+                </div>
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 joy-orange rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-orange-500/20 text-white">📈</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Insightful Analytics</h3>
+                    <p class="text-slate-500 leading-relaxed">Visualize your data with clean, simple charts that break down your spending by category and joy level.</p>
+                </div>
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 joy-red rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-red-500/20 text-white">☁️</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Secure Sync</h3>
+                    <p class="text-slate-500 leading-relaxed">Sync across all your devices instantly. Your data is encrypted and always backed up securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY SECTION -->
+    <section id="privacy" class="max-w-4xl mx-auto px-6 py-16">
+        <div class="border-2 border-slate-100 p-12 rounded-[2.5rem] bg-white">
+            <h2 class="text-3xl font-black text-slate-900 mb-8">Privacy is our Priority</h2>
+            <div class="space-y-10">
+                <div class="flex gap-6">
+                    <div class="text-blue-600 font-bold text-lg">01.</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">No Data Selling</h4>
+                        <p class="text-slate-500 leading-loose text-sm">We believe your financial life is private. JoySpend will never sell your personal data or spending habits to advertisers. Period.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="text-blue-600 font-bold text-lg">02.</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">Secure Cloud Protection</h4>
+                        <p class="text-slate-500 leading-loose text-sm">All data synced to the cloud is encrypted at rest and in transit using industry-standard AES-256 protocols. Your "Joy Scores" and transaction notes remain private and secure on Google Cloud's infrastructure.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="text-blue-600 font-bold text-lg">03.</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">Data Portability</h4>
+                        <p class="text-slate-500 leading-loose text-sm">You own your data. You can export your entire history as a CSV or delete your entire account and all associated data permanently at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT SECTION -->
+    <section id="support" class="bg-slate-900 py-16 rounded-[4rem] mx-4 mt-8 mb-2 text-center text-white">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-4xl font-black mb-6">Let's talk.</h2>
+            <p class="text-slate-400 text-lg mb-8">Found a bug? Have a feature request? We'd love to hear from you.</p>
+            
+            <div class="flex flex-col items-center">
+                <span class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-2">Support Email</span>
+                <a href="mailto:support@joyspend.app" class="text-2xl md:text-3xl font-bold joy-blue-text hover:opacity-80 transition-opacity">
+                    support@joyspend.app
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center shadow-sm">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 7H5C3.89543 7 3 7.89543 3 9V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V9C21 7.89543 20.1046 7 19 7Z" fill="#64748B"/>
+                        <path d="M8 13.5C8.5 14.5 9.5 15.5 12 15.5C14.5 15.5 15.5 14.5 16 13.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-900 leading-tight">JoySpend</span>
+                    <span class="text-slate-300 text-sm font-medium">© 2025 All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const card = document.getElementById('hero-card');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+
+        function openBothStores() {
+            const appleURL = "https://apps.apple.com"; 
+            const googleURL = "https://play.google.com/store";
+            window.open(appleURL, '_blank');
+            window.open(googleURL, '_blank');
+        }
+    </script>
+</body>
+</html>
