@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNZK57D012"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CNZK57D012');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JoySpend — Mindful Expense Tracking with Emotion Insights</title>
     <meta name="description" content="Track your expenses, tag your emotions, and discover what truly brings you joy. Free on iOS and Android.">
@@ -394,6 +403,38 @@
 
         document.addEventListener('mouseleave', () => {
             card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
+
+    <script>
+        // ===========================================
+        // GA4 EVENT TRACKING
+        // ===========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Track all store badge clicks
+            document.querySelectorAll('.store-badge').forEach(badge => {
+                badge.addEventListener('click', () => {
+                    const isAppStore = badge.href.includes('apple.com');
+                    gtag('event', 'download_click', {
+                        store: isAppStore ? 'app_store' : 'play_store',
+                        link_url: badge.href
+                    });
+                });
+            });
+
+            // Track "Support the Developer" clicks
+            document.querySelectorAll('a[href*="buymeacoffee"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    gtag('event', 'support_developer_click');
+                });
+            });
+
+            // Track support email clicks
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    gtag('event', 'support_email_click');
+                });
+            });
         });
     </script>
 </body>
