@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoySpend - Be Among the First to Experience Mindful Spending</title>
+    <title>JoySpend — Mindful Expense Tracking with Emotion Insights</title>
+    <meta name="description" content="Track your expenses, tag your emotions, and discover what truly brings you joy. Free on iOS and Android.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Firebase SDK loaded in footer script as module -->
     
     <style>
         body { 
@@ -58,59 +57,29 @@
         .floating-element {
             animation: float 4s ease-in-out infinite;
         }
-        
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(45, 91, 255, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(45, 91, 255, 0.5); }
+
+        /* Store badge hover */
+        .store-badge {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
+        .store-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* Email form styles */
-        .email-input {
-            background: #F8FAFC;
-            border: 2px solid #E2E8F0;
-            transition: all 0.2s ease;
-        }
-        
-        .email-input:focus {
-            outline: none;
-            border-color: #2D5BFF;
-            background: #FFFFFF;
-            box-shadow: 0 0 0 4px rgba(45, 91, 255, 0.1);
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #2D5BFF 0%, #1E40AF 100%);
-            transition: all 0.2s ease;
-        }
-        
-        .submit-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(45, 91, 255, 0.4);
-        }
-        
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
+        /* Gradient text */
+        .gradient-text {
+            color: #2D5BFF;
+            background: linear-gradient(135deg, #2D5BFF 0%, #6366F1 50%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Success animation */
-        @keyframes checkmark {
-            0% { transform: scale(0); opacity: 0; }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        .success-check {
-            animation: checkmark 0.4s ease-out forwards;
-        }
-
-        /* Countdown/urgency styling */
-        .spots-badge {
-            background: linear-gradient(135deg, #FF9800 0%, #FF5252 100%);
+        /* Subtle section divider */
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, #E2E8F0 50%, transparent 100%);
+            height: 1px;
         }
     </style>
 </head>
@@ -130,11 +99,16 @@
                 </div>
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </div>
-            <div class="hidden md:flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                <a href="#home" class="hover:joy-blue-text transition-colors">Home</a>
-                <a href="#features" class="hover:joy-blue-text transition-colors">Features</a>
-                <a href="#privacy" class="hover:joy-blue-text transition-colors">Privacy</a>
-                <a href="#support" class="hover:joy-blue-text transition-colors">Support</a>
+            <div class="hidden md:flex items-center gap-10">
+                <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
+                    <a href="#home" class="hover:joy-blue-text transition-colors">Home</a>
+                    <a href="#features" class="hover:joy-blue-text transition-colors">Features</a>
+                    <a href="#privacy" class="hover:joy-blue-text transition-colors">Privacy</a>
+                    <a href="#download" class="hover:joy-blue-text transition-colors">Support</a>
+                </div>
+                <a href="#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+                    Download
+                </a>
             </div>
         </div>
     </nav>
@@ -142,85 +116,45 @@
     <!-- HERO SECTION -->
     <section id="home" class="max-w-6xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <!-- Early Access Badge -->
-            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-100 px-4 py-2 rounded-full mb-6">
+            <!-- Available Now Badge -->
+            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 px-4 py-2 rounded-full mb-6">
                 <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
-                <span class="font-bold text-xs uppercase tracking-widest text-slate-700">Early Access Program</span>
+                <span class="font-bold text-xs uppercase tracking-widest text-green-800">Available Now on iOS & Android</span>
             </div>
             
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Be among the <span class="joy-blue-text">first</span> to master mindful spending
+                Spend Mindfully.<br><span class="gradient-text">Live Joyfully.</span>
             </h1>
             <p class="text-lg text-slate-500 leading-relaxed max-w-lg mb-8">
-                JoySpend is almost ready! Join our exclusive beta program to get early access and help shape the future of emotional budgeting. As a thank you, you'll get <span class="text-slate-900 font-semibold">priority access to all future releases.</span>
+                Track your expenses, tag your emotions, and discover what truly brings you joy. The only expense tracker that helps you understand <span class="text-slate-900 font-semibold">how your money makes you feel.</span>
             </p>
             
-            <!-- Email Signup Form -->
-            <div id="signup-form-container">
-                <form id="email-form" class="flex flex-col sm:flex-row gap-3 mb-4">
-                    <div class="flex-1 relative">
-                        <input 
-                            type="email" 
-                            id="email-input"
-                            placeholder="Enter your email address" 
-                            required
-                            class="email-input w-full px-5 py-4 rounded-2xl text-slate-800 font-medium placeholder:text-slate-400"
-                        >
-                    </div>
-                    <button 
-                        type="submit" 
-                        id="submit-btn"
-                        class="submit-btn px-8 py-4 rounded-2xl text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 min-w-[160px]"
-                    >
-                        <span id="btn-text">Join Beta</span>
-                        <svg id="btn-arrow" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                        </svg>
-                        <svg id="btn-spinner" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                    </button>
-                </form>
-                <p class="text-xs text-slate-400 flex items-center gap-2">
-                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
-                    </svg>
-                    Your email is safe. No spam, just beta access updates.
-                </p>
+            <!-- Store Badges -->
+            <div class="flex flex-wrap gap-4 mb-6">
+                <!-- App Store Badge -->
+                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" id="appstore-link" class="store-badge inline-block rounded-xl overflow-hidden">
+                    <img src="./app-store-badge.svg" alt="Download on the App Store" class="h-14">
+                </a>
+                <!-- Google Play Badge -->
+                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" id="playstore-link" class="store-badge inline-block rounded-xl overflow-hidden">
+                    <img src="./google-play-badge.svg" alt="Get it on Google Play" class="h-14">
+                </a>
             </div>
-            
-            <!-- Success State (hidden by default) -->
-            <div id="success-message" class="hidden">
-                <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center success-check">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-green-800 text-lg">You're on the list! 🎉</h3>
-                            <p class="text-green-600 text-sm">We'll send you an invite to test JoySpend soon.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Error State (hidden by default) -->
-            <div id="error-message" class="hidden">
-                <div class="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-2xl p-4">
-                    <p class="text-red-600 text-sm font-medium" id="error-text">Something went wrong. Please try again.</p>
-                </div>
-            </div>
+
+            <p class="text-sm text-slate-400 flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Free to download · Works offline · Optional cloud sync
+            </p>
         </div>
 
-        <!-- 3D Phone Mockup (Flat Design) -->
+        <!-- 3D Phone Mockup -->
         <div class="perspective-1000 flex justify-center items-center">
-            <div id="hero-card" class="tilt-card w-72 h-[580px] bg-slate-900 rounded-[3.5rem] p-3 shadow-2xl relative cursor-pointer group pulse-glow">
+            <div id="hero-card" class="tilt-card w-72 h-[580px] bg-slate-900 rounded-[3.5rem] p-3 shadow-2xl relative cursor-pointer group">
                 <div class="bg-white w-full h-full rounded-[2.8rem] overflow-hidden p-6 flex flex-col">
                     <!-- App Status Bar -->
                     <div class="flex justify-between items-center mb-6">
@@ -263,42 +197,41 @@
                     </div>
                 </div>
 
-                <!-- Floating Labels (3D) -->
+                <!-- Floating Labels -->
                 <div class="absolute -right-12 top-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 floating-element" style="transform: translateZ(60px)">
-                    <span class="joy-orange w-8 h-8 rounded-lg flex items-center justify-center text-white">🔥</span>
-                    <span class="text-xs font-bold">Coming Soon!</span>
+                    <span class="bg-green-500 w-8 h-8 rounded-lg flex items-center justify-center text-white">✨</span>
+                    <span class="text-xs font-bold">Available Now!</span>
                 </div>
                 
-                <!-- Beta Badge -->
-                <div class="absolute -left-8 bottom-1/4 spots-badge text-white px-4 py-2 rounded-xl shadow-lg font-bold text-xs uppercase tracking-wider floating-element" style="animation-delay: 1s;">
-                    🚀 Beta
+                <div class="absolute -left-8 bottom-1/4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-xl shadow-lg font-bold text-xs uppercase tracking-wider floating-element" style="animation-delay: 1s;">
+                    🎉 Free
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- WHAT YOU GET SECTION -->
+
+    <!-- WHY JOYSPEND SECTION -->
     <section class="bg-gradient-to-b from-slate-50 to-white py-16">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-slate-900 mb-4">What Beta Testers Get</h2>
-                <p class="text-slate-500 max-w-xl mx-auto">Be part of an exclusive group shaping the future of mindful spending</p>
+                <h2 class="text-3xl font-black text-slate-900 mb-4">Why JoySpend?</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">More than an expense tracker — a tool for understanding your relationship with money</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">🎁</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Early Access</h3>
-                    <p class="text-slate-500 text-sm">Get the app before public launch on iOS and Android</p>
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">😊</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Emotion-Aware Tracking</h3>
+                    <p class="text-slate-500 text-sm">Every transaction gets a joy rating. Discover which spending truly makes you happy.</p>
                 </div>
                 <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-orange-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">💬</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Direct Feedback</h3>
-                    <p class="text-slate-500 text-sm">Your suggestions directly influence features we build</p>
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">📊</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Smart Insights</h3>
+                    <p class="text-slate-500 text-sm">Beautiful analytics — expenses, income, investments, and savings, broken down by category and emotion.</p>
                 </div>
                 <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">⚡</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Priority Updates</h3>
-                    <p class="text-slate-500 text-sm">First to receive all future releases and features</p>
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">🔒</div>
+                    <h3 class="font-bold text-slate-900 mb-2">100% Private</h3>
+                    <p class="text-slate-500 text-sm">Your data stays yours. Local-first storage, encrypted cloud sync, no ads, no data selling.</p>
                 </div>
             </div>
         </div>
@@ -311,7 +244,7 @@
                 <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Financial Clarity, Emotional Growth</h2>
                 <p class="text-slate-500 max-w-xl mx-auto text-lg">Your spending habits say a lot about you. We help you listen to what they're saying.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div class="flat-card p-10 rounded-app">
                     <div class="w-14 h-14 joy-blue rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-blue-500/20 text-white">😊</div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900">Joy Ratings</h3>
@@ -320,12 +253,30 @@
                 <div class="flat-card p-10 rounded-app">
                     <div class="w-14 h-14 joy-orange rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-orange-500/20 text-white">📈</div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900">Insightful Analytics</h3>
-                    <p class="text-slate-500 leading-relaxed">Visualize your data with clean, simple charts that break down your spending by category and joy level.</p>
+                    <p class="text-slate-500 leading-relaxed">Visualize spending by category, emotion, and time. Monthly and yearly breakdowns at a glance.</p>
                 </div>
                 <div class="flat-card p-10 rounded-app">
                     <div class="w-14 h-14 joy-red rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-red-500/20 text-white">☁️</div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900">Secure Sync</h3>
                     <p class="text-slate-500 leading-relaxed">Sync across all your devices instantly. Your data is encrypted and always backed up securely.</p>
+                </div>
+            </div>
+            <!-- Second row of features -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 bg-indigo-500 rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/20 text-white">💱</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Multi-Currency</h3>
+                    <p class="text-slate-500 leading-relaxed">12+ currencies with live exchange rates. Perfect for travelers and global spenders.</p>
+                </div>
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 bg-teal-500 rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-teal-500/20 text-white">🔄</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Recurring Tracking</h3>
+                    <p class="text-slate-500 leading-relaxed">Set up recurring expenses and investments. Never forget a subscription again.</p>
+                </div>
+                <div class="flat-card p-10 rounded-app">
+                    <div class="w-14 h-14 bg-violet-500 rounded-2xl mb-8 flex items-center justify-center text-2xl shadow-lg shadow-violet-500/20 text-white">🌙</div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Dark Mode</h3>
+                    <p class="text-slate-500 leading-relaxed">Beautiful in light or dark. Your eyes will thank you during those late-night expense reviews.</p>
                 </div>
             </div>
         </div>
@@ -334,7 +285,7 @@
     <!-- PRIVACY SECTION -->
     <section id="privacy" class="max-w-4xl mx-auto px-6 py-16">
         <div class="border-2 border-slate-100 p-12 rounded-[2.5rem] bg-white">
-            <h2 class="text-3xl font-black text-slate-900 mb-8">Privacy is our Priority</h2>
+            <h2 class="text-3xl font-black text-slate-900 mb-8">Privacy is Our Priority</h2>
             <div class="space-y-10">
                 <div class="flex gap-6">
                     <div class="text-blue-600 font-bold text-lg">01.</div>
@@ -353,32 +304,49 @@
                 <div class="flex gap-6">
                     <div class="text-blue-600 font-bold text-lg">03.</div>
                     <div>
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">Data Portability</h4>
-                        <p class="text-slate-500 leading-loose text-sm">You own your data. You can export your entire history as a CSV or delete your entire account and all associated data permanently at any time.</p>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">Seamless Multi-Device Access</h4>
+                        <p class="text-slate-500 leading-loose text-sm">Log an expense on one device and see it on another. Your data syncs securely across all your devices, and you can delete your entire account and all associated data permanently at any time.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SUPPORT SECTION -->
-    <section id="support" class="bg-slate-900 py-16 rounded-[4rem] mx-4 mt-8 mb-2 text-center text-white">
+    <!-- DOWNLOAD CTA SECTION -->
+    <section id="download" class="bg-slate-900 py-16 rounded-[4rem] mx-4 mt-8 mb-2 text-center text-white">
         <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-4xl font-black mb-6">Let's talk!</h2>
-            <p class="text-slate-400 text-lg mb-8">Found a bug? Have a feature request? We'd love to hear from you.</p>
+            <h2 class="text-4xl font-black mb-6">Start Your Mindful Spending Journey</h2>
+            <p class="text-slate-400 text-lg mb-10">Free to download. No account required. Your data stays on your device.</p>
             
-            <div class="flex flex-col items-center">
-                <span class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-2">Support Email</span>
-                <a href="mailto:support@joyspend.tech" class="text-2xl md:text-3xl font-bold joy-blue-text hover:opacity-80 transition-opacity">
-                    support@joyspend.tech
+            <!-- Store Badges (centered) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden">
+                    <img src="./app-store-badge.svg" alt="Download on the App Store" class="h-16">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden">
+                    <img src="./google-play-badge.svg" alt="Get it on Google Play" class="h-16">
+                </a>
+            </div>
+
+            <div class="section-divider w-24 mx-auto mb-8"></div>
+
+            <div class="flex flex-col items-center gap-6">
+                <div class="text-center">
+                    <span class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-2 block">Questions or Feedback?</span>
+                    <a href="mailto:support@joyspend.tech" class="text-2xl md:text-3xl font-bold joy-blue-text hover:opacity-80 transition-opacity">
+                        support@joyspend.tech
+                    </a>
+                </div>
+                <a href="https://buymeacoffee.com/joyspend" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-amber-900 font-bold px-6 py-3 rounded-full transition-all hover:translate-y-[-2px] hover:shadow-lg shadow-amber-400/30 text-sm uppercase tracking-wide">
+                    <span class="text-lg">☕</span> Support the Developer
                 </a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-6">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+    <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -391,110 +359,17 @@
                     <span class="text-slate-300 text-sm font-medium">© 2025 All rights reserved.</span>
                 </div>
             </div>
+            <div class="flex items-center gap-6 text-sm font-semibold text-slate-400">
+                <a href="#privacy" class="hover:text-slate-700 transition-colors">Privacy</a>
+                <a href="mailto:support@joyspend.tech" class="hover:text-slate-700 transition-colors">Support</a>
+                <a href="https://buymeacoffee.com/joyspend" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 transition-colors flex items-center gap-1.5">
+                    <span>☕</span> Support the Developer
+                </a>
+            </div>
         </div>
     </footer>
 
-    <script type="module">
-        // ===========================================
-        // FIREBASE CONFIGURATION (Modular SDK)
-        // ===========================================
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyDzyWTND969ZopPSpC5DNfaLxe4V-DRNlw",
-            authDomain: "joyspend9999.firebaseapp.com",
-            projectId: "joyspend9999",
-            storageBucket: "joyspend9999.firebasestorage.app",
-            messagingSenderId: "742884509522",
-            appId: "1:742884509522:web:1afc88eee02469e7cc9c8b",
-            measurementId: "G-HWS2YD18HY"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        // Use the 'betatesters' named database
-        const db = getFirestore(app, 'betatesters');
-
-        // ===========================================
-        // FORM HANDLING
-        // ===========================================
-        const form = document.getElementById('email-form');
-        const emailInput = document.getElementById('email-input');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnArrow = document.getElementById('btn-arrow');
-        const btnSpinner = document.getElementById('btn-spinner');
-        const formContainer = document.getElementById('signup-form-container');
-        const successMessage = document.getElementById('success-message');
-        const errorMessage = document.getElementById('error-message');
-        const errorText = document.getElementById('error-text');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim().toLowerCase();
-            
-            // Basic email validation
-            if (!email || !isValidEmail(email)) {
-                showError('Please enter a valid email address.');
-                return;
-            }
-
-            // Show loading state
-            setLoading(true);
-            hideError();
-
-            try {
-                // Add email to Firestore
-                await addDoc(collection(db, 'beta_signups'), {
-                    email: email,
-                    signedUpAt: serverTimestamp(),
-                    source: 'website',
-                    invited: false
-                });
-                
-                // Show success
-                showSuccess();
-                
-            } catch (error) {
-                showError('Something went wrong. Please try again later.');
-                setLoading(false);
-            }
-        });
-
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        function setLoading(loading) {
-            submitBtn.disabled = loading;
-            if (loading) {
-                btnText.textContent = 'Joining...';
-                btnArrow.classList.add('hidden');
-                btnSpinner.classList.remove('hidden');
-            } else {
-                btnText.textContent = 'Join Beta';
-                btnArrow.classList.remove('hidden');
-                btnSpinner.classList.add('hidden');
-            }
-        }
-
-        function showSuccess() {
-            formContainer.classList.add('hidden');
-            successMessage.classList.remove('hidden');
-        }
-
-        function showError(message) {
-            errorText.textContent = message;
-            errorMessage.classList.remove('hidden');
-        }
-
-        function hideError() {
-            errorMessage.classList.add('hidden');
-        }
-
+    <script>
         // ===========================================
         // 3D CARD ANIMATION
         // ===========================================
