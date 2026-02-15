@@ -414,7 +414,7 @@
             // Track all store badge clicks
             document.querySelectorAll('.store-badge').forEach(badge => {
                 badge.addEventListener('click', () => {
-                    const isAppStore = badge.querySelector('img')?.alt?.includes('App Store');
+                    const isAppStore = badge.href.includes('apple.com');
                     gtag('event', 'download_click', {
                         store: isAppStore ? 'app_store' : 'play_store',
                         link_url: badge.href
