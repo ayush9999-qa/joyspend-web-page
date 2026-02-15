@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNZK57D012"></script>
+    <!-- Google Analytics (GA4) — loaded only after user consent -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CNZK57D012');
+
+      function loadGA4() {
+        if (document.querySelector('script[src*="googletagmanager"]')) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CNZK57D012';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-CNZK57D012');
+      }
+
+      // Auto-load if user previously consented
+      if (localStorage.getItem('analytics_consent') === 'accepted') {
+        loadGA4();
+      }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JoySpend — Mindful Expense Tracking with Emotion Insights</title>
@@ -406,36 +418,80 @@
         });
     </script>
 
+    <!-- Cookie Consent Banner -->
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 hidden">
+        <div class="max-w-3xl mx-auto bg-slate-900 text-white rounded-2xl p-5 shadow-2xl flex flex-col sm:flex-row items-center gap-4">
+            <p class="text-sm text-slate-300 flex-1">
+                We use cookies for anonymous analytics to understand how visitors use this page. No personal data is collected or sold.
+            </p>
+            <div class="flex gap-3 shrink-0">
+                <button id="consent-decline" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white transition-colors">
+                    Decline
+                </button>
+                <button id="consent-accept" class="px-5 py-2 text-sm font-bold bg-blue-600 hover:bg-blue-500 rounded-full transition-colors">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ===========================================
-        // GA4 EVENT TRACKING
+        // COOKIE CONSENT + GA4 EVENT TRACKING
         // ===========================================
-        document.addEventListener('DOMContentLoaded', () => {
-            // Track all store badge clicks
-            document.querySelectorAll('.store-badge').forEach(badge => {
-                badge.addEventListener('click', () => {
-                    const isAppStore = badge.href.includes('apple.com');
-                    gtag('event', 'download_click', {
-                        store: isAppStore ? 'app_store' : 'play_store',
-                        link_url: badge.href
+        (function() {
+            const consent = localStorage.getItem('analytics_consent');
+            const banner = document.getElementById('consent-banner');
+
+            // Show banner if user hasn't decided yet
+            if (!consent) {
+                banner.classList.remove('hidden');
+            }
+
+            document.getElementById('consent-accept').addEventListener('click', () => {
+                localStorage.setItem('analytics_consent', 'accepted');
+                banner.classList.add('hidden');
+                loadGA4();
+                bindEventTracking();
+            });
+
+            document.getElementById('consent-decline').addEventListener('click', () => {
+                localStorage.setItem('analytics_consent', 'declined');
+                banner.classList.add('hidden');
+            });
+
+            function bindEventTracking() {
+                // Track store badge clicks
+                document.querySelectorAll('.store-badge').forEach(badge => {
+                    badge.addEventListener('click', () => {
+                        const isAppStore = badge.href.includes('apple.com');
+                        gtag('event', 'download_click', {
+                            store: isAppStore ? 'app_store' : 'play_store',
+                            link_url: badge.href
+                        });
                     });
                 });
-            });
 
-            // Track "Support the Developer" clicks
-            document.querySelectorAll('a[href*="buymeacoffee"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    gtag('event', 'support_developer_click');
+                // Track "Support the Developer" clicks
+                document.querySelectorAll('a[href*="buymeacoffee"]').forEach(link => {
+                    link.addEventListener('click', () => {
+                        gtag('event', 'support_developer_click');
+                    });
                 });
-            });
 
-            // Track support email clicks
-            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    gtag('event', 'support_email_click');
+                // Track support email clicks
+                document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                    link.addEventListener('click', () => {
+                        gtag('event', 'support_email_click');
+                    });
                 });
-            });
-        });
+            }
+
+            // If already consented, bind events immediately
+            if (consent === 'accepted') {
+                document.addEventListener('DOMContentLoaded', bindEventTracking);
+            }
+        })();
     </script>
 </body>
 </html>
