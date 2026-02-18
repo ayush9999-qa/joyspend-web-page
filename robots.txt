@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.idea/
+Disallow: /logs/
 
 Sitemap: https://joyspend.tech/sitemap.xml

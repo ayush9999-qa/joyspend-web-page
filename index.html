@@ -24,19 +24,70 @@
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoySpend — Mindful Expense Tracking with Emotion Insights</title>
-    <meta name="description" content="Track your expenses, tag your emotions, and discover what truly brings you joy. Free on iOS and Android.">
+    <title>JoySpend — Free Expense Tracker with Emotion Insights | iOS & Android</title>
+    <meta name="description" content="JoySpend is a free mindful expense tracker app for iOS and Android. Tag emotions to every transaction, discover joy ratings, track budgets, and manage multi-currency spending — all with secure cloud sync.">
+    <meta name="keywords" content="expense tracker, free expense tracker app, emotion tracking app, mindful spending, budget app, joy rating expenses, iOS expense tracker, Android budget app, personal finance app, spending habits tracker, multi-currency expense tracker, recurring expense tracker">
+    <meta name="author" content="JoySpend">
+    <meta name="application-name" content="JoySpend">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2D5BFF">
     <link rel="canonical" href="https://joyspend.tech/">
     
     <!-- Open Graph / Social Sharing -->
-    <!-- To enable rich image previews, add og:image and twitter:image tags and change twitter:card to summary_large_image -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://joyspend.tech/">
-    <meta property="og:title" content="JoySpend — Mindful Expense Tracking with Emotion Insights">
-    <meta property="og:description" content="Track your expenses, tag your emotions, and discover what truly brings you joy. Free on iOS and Android.">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="JoySpend — Mindful Expense Tracking">
-    <meta name="twitter:description" content="The only expense tracker that helps you understand how your money makes you feel.">
+    <meta property="og:title" content="JoySpend — Free Expense Tracker with Emotion Insights">
+    <meta property="og:description" content="Track expenses, tag emotions, and discover what truly brings you joy. Free mindful budget app for iOS and Android with secure sync.">
+    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JoySpend — Free Mindful Expense Tracker">
+    <meta name="twitter:description" content="The only expense tracker that helps you understand how your money makes you feel. Free on iOS & Android.">
+    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JoySpend",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://joyspend.tech/og-image.png",
+      "description": "Track your expenses, tag your emotions, and discover what truly brings you joy. The mindful expense tracker with joy ratings, multi-currency support, and secure cloud sync.",
+      "url": "https://joyspend.tech/",
+      "downloadUrl": [
+        "https://apps.apple.com/app/joyspend/id6756809900",
+        "https://play.google.com/store/apps/details?id=com.joyspend.app"
+      ],
+      "featureList": [
+        "Emotion-aware expense tracking with joy ratings",
+        "Multi-currency support with 12+ currencies",
+        "Recurring expense and investment tracking",
+        "Secure encrypted cloud sync across devices",
+        "Beautiful dark mode",
+        "Insightful analytics and spending breakdowns",
+        "Works offline — no account required"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JoySpend",
+      "url": "https://joyspend.tech/",
+      "logo": "https://joyspend.tech/icon.png",
+      "email": "support@joyspend.tech",
+      "description": "JoySpend helps you understand the emotional impact of your spending through mindful expense tracking."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -122,13 +173,7 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <!-- JOYSPEND LOGO -->
-                <div class="w-10 h-10 joy-blue rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 7H5C3.89543 7 3 7.89543 3 9V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V9C21 7.89543 20.1046 7 19 7Z" fill="white"/>
-                        <path d="M19 7H5C3.89543 7 3 7.89543 3 9M19 7C20.1046 7 21 7.89543 21 9V11C21 11.5523 20.5523 12 20 12H18C17.4477 12 17 11.5523 17 11V10C17 9.44772 16.5523 9 16 9H3" stroke="#2D5BFF" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M8 13.5C8.5 14.5 9.5 15.5 12 15.5C14.5 15.5 15.5 14.5 16 13.5" stroke="#2D5BFF" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </div>
+                <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </div>
             <div class="hidden md:flex items-center gap-10">
@@ -136,6 +181,7 @@
                     <a href="#home" class="hover:joy-blue-text transition-colors">Home</a>
                     <a href="#features" class="hover:joy-blue-text transition-colors">Features</a>
                     <a href="#privacy" class="hover:joy-blue-text transition-colors">Privacy</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors">Blog</a>
                     <a href="#download" class="hover:joy-blue-text transition-colors">Support</a>
                 </div>
                 <a href="#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
@@ -388,7 +434,7 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-slate-900 leading-tight">JoySpend</span>
-                    <span class="text-slate-300 text-sm font-medium">© 2025 All rights reserved.</span>
+                    <span class="text-slate-300 text-sm font-medium">© 2026 All rights reserved.</span>
                 </div>
             </div>
             <div class="flex items-center gap-6 text-sm font-semibold text-slate-400">
