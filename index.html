@@ -88,7 +88,55 @@
       "description": "JoySpend helps you understand the emotional impact of your spending through mindful expense tracking."
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is JoySpend really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. JoySpend is completely free to download and use on both iOS and Android. There are no subscriptions, no paywalled features, and no ads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does JoySpend work without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. JoySpend works fully offline. Your data is stored locally on your device. Cloud sync is optional and only activates when you choose to enable it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does JoySpend sell my financial data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. JoySpend uses a local-first storage model and will never sell your personal data or spending habits to advertisers or third parties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is emotion-aware expense tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Emotion-aware tracking lets you rate each transaction with a joy score from 1 to 5. Over time, JoySpend's analytics reveal which spending categories genuinely make you happy and which leave you feeling regretful — helping you spend more intentionally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which currencies does JoySpend support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JoySpend supports 12+ currencies with live exchange rates, making it ideal for travelers and international users."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -387,6 +435,35 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <!-- FROM THE BLOG SECTION -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-black text-slate-900 mb-3">From the Blog</h2>
+            <p class="text-slate-500">Tips on mindful spending, emotional awareness, and building a healthier relationship with your money.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="/blog/emotion-tracking-expenses.html" class="flat-card p-6 rounded-app block hover:no-underline group">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3 block">Emotional Intelligence</span>
+                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Why Tracking Your Emotions With Expenses Matters</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Discover how pairing emotion tags with transactions can transform your financial well-being.</p>
+            </a>
+            <a href="/blog/best-free-expense-tracker.html" class="flat-card p-6 rounded-app block hover:no-underline group">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3 block">App Reviews</span>
+                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Best Free Expense Tracker Apps in 2026</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">We compare the top free expense tracker apps by features, privacy, and usability.</p>
+            </a>
+            <a href="/blog/mindful-spending-tips.html" class="flat-card p-6 rounded-app block hover:no-underline group">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3 block">Mindful Living</span>
+                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">5 Ways Mindful Spending Can Improve Your Life</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">How being intentional with every purchase can reduce financial stress and increase happiness.</p>
+            </a>
+        </div>
+        <div class="text-center mt-8">
+            <a href="/blog/" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:underline">
+                View all articles →
+            </a>
         </div>
     </section>
 
