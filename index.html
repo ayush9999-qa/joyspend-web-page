@@ -408,6 +408,31 @@
         </div>
     </section>
 
+    <!-- HOW IT WORKS SECTION -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-slate-900 mb-4">How It Works</h2>
+            <p class="text-slate-500 max-w-xl mx-auto">Getting started takes under 2 minutes. No account required.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-14 h-14 joy-blue rounded-2xl mx-auto mb-5 flex items-center justify-center text-xl font-black text-white shadow-lg shadow-blue-500/20">1</div>
+                <h3 class="font-bold text-slate-900 mb-2">Log Your Expenses</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Add any transaction in seconds — amount, category, date, and an optional note. Works completely offline, no sign-up needed.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-14 h-14 joy-blue rounded-2xl mx-auto mb-5 flex items-center justify-center text-xl font-black text-white shadow-lg shadow-blue-500/20">2</div>
+                <h3 class="font-bold text-slate-900 mb-2">Rate Your Joy</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Give each purchase a joy rating from 1 to 5. Did that dinner make you happy? Did the impulse buy feel empty afterwards? Now you'll know.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-14 h-14 joy-blue rounded-2xl mx-auto mb-5 flex items-center justify-center text-xl font-black text-white shadow-lg shadow-blue-500/20">3</div>
+                <h3 class="font-bold text-slate-900 mb-2">Discover Patterns</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Your analytics dashboard reveals which categories bring genuine happiness and which drain your wallet without adding joy. Spend better, not less.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- PRIVACY SECTION -->
     <section id="privacy" class="max-w-4xl mx-auto px-6 py-16">
         <div class="border-2 border-slate-100 p-12 rounded-[2.5rem] bg-white">
@@ -464,6 +489,61 @@
             <a href="/blog/" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:underline">
                 View all articles →
             </a>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="max-w-3xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <p class="text-slate-500">Everything you need to know before downloading.</p>
+        </div>
+        <div class="space-y-4" id="faq-list">
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Is JoySpend really free?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Yes — completely free to download and use on both iOS and Android. No subscriptions, no paywalled features, no ads. Ever.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Does it work without an internet connection?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Yes. JoySpend is local-first — all your data is stored on your device. You only need internet if you choose to enable optional cloud sync across devices.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Will JoySpend sell my financial data?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Never. Your spending habits are yours alone. JoySpend will never sell, share, or monetise your personal data or transaction history.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    What currencies does JoySpend support?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    JoySpend supports 12+ currencies with live exchange rates — making it ideal for travelers, expats, and anyone who spends across borders.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Is JoySpend available on both iOS and Android?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Yes. JoySpend is available as a free download on the Apple App Store and Google Play Store.
+                </div>
+            </div>
         </div>
     </section>
 
@@ -538,6 +618,23 @@
 
         document.addEventListener('mouseleave', () => {
             card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+
+        // ===========================================
+        // FAQ ACCORDION
+        // ===========================================
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                const isOpen = !answer.classList.contains('hidden');
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.textContent = '−';
+                }
+            });
         });
     </script>
 
