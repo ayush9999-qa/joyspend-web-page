@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./*.html",
+    "./delete-account/**/*.html",
     "./blog/*.html",
     "./blog/**/*.html"
   ],

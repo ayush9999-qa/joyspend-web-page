@@ -25,9 +25,9 @@
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoySpend — Free Expense Tracker with Emotion Insights | iOS & Android</title>
-    <meta name="description" content="JoySpend is a free mindful expense tracker app for iOS and Android. Tag emotions to every transaction, discover joy ratings, track budgets, and manage multi-currency spending — all with secure cloud sync.">
-    <meta name="keywords" content="expense tracker, free expense tracker app, emotion tracking app, mindful spending, budget app, joy rating expenses, iOS expense tracker, Android budget app, personal finance app, spending habits tracker, multi-currency expense tracker, recurring expense tracker">
+    <title>JoySpend — Mindful Expense Tracking with Optional AI Coaching</title>
+    <meta name="description" content="JoySpend is an emotion-first money manager for iOS and Android. Track unlimited expenses and budgets for free, then add AI spending insights, expense logging, and goal coaching when you need more support.">
+    <meta name="keywords" content="expense tracker, mindful spending, emotion tracking app, budget app, AI financial coach, AI expense tracker, joy rating expenses, iOS expense tracker, Android budget app, personal finance app, spending habits tracker, multi-currency expense tracker, recurring expense tracker">
     <meta name="author" content="JoySpend">
     <meta name="application-name" content="JoySpend">
     <meta name="robots" content="index, follow">
@@ -37,14 +37,14 @@
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://joyspend.tech/">
-    <meta property="og:title" content="JoySpend — Free Expense Tracker with Emotion Insights">
-    <meta property="og:description" content="Track expenses, tag emotions, and discover what truly brings you joy. Free mindful budget app for iOS and Android with secure sync.">
+    <meta property="og:title" content="JoySpend — Mindful Expense Tracking with Optional AI Coaching">
+    <meta property="og:description" content="Start with a free emotion-first money manager. Upgrade for AI spending insights, chat-based logging, and goal coaching when you want it.">
     <meta property="og:image" content="https://joyspend.tech/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JoySpend — Free Mindful Expense Tracker">
-    <meta name="twitter:description" content="The only expense tracker that helps you understand how your money makes you feel. Free on iOS & Android.">
+    <meta name="twitter:title" content="JoySpend — Mindful Expense Tracking, Your Way">
+    <meta name="twitter:description" content="A free emotion-first money manager with optional AI spending insights and financial coaching.">
     <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
 
     <!-- Schema.org Structured Data -->
@@ -55,13 +55,15 @@
       "name": "JoySpend",
       "operatingSystem": "iOS, Android",
       "applicationCategory": "FinanceApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
+      "offers": [
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "JoySpend Plus", "price": "5.99", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "JoySpend Pro", "price": "8.99", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "JoySpend Plus Annual", "price": "65.99", "priceCurrency": "USD", "billingDuration": "P1Y" },
+        { "@type": "Offer", "name": "JoySpend Pro Annual", "price": "89.99", "priceCurrency": "USD", "billingDuration": "P1Y" }
+      ],
       "image": "https://joyspend.tech/og-image.png",
-      "description": "Track your expenses, tag your emotions, and discover what truly brings you joy. The mindful expense tracker with joy ratings, multi-currency support, and secure cloud sync.",
+      "description": "Track your expenses, tag your emotions, and discover what truly brings you joy. Start with a free mindful money manager, then add optional AI spending insights and financial coaching.",
       "url": "https://joyspend.tech/",
       "downloadUrl": [
         "https://apps.apple.com/app/joyspend/id6756809900",
@@ -74,7 +76,8 @@
         "Secure encrypted cloud sync across devices",
         "Beautiful dark mode",
         "Insightful analytics and spending breakdowns",
-        "Works offline — no account required"
+        "Works offline — no account required",
+        "Optional AI spending assistant and financial coaching"
       ]
     }
     </script>
@@ -96,10 +99,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is JoySpend really free?",
+          "name": "Is JoySpend free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. JoySpend is completely free to download and use on both iOS and Android. There are no subscriptions, no paywalled features, and no ads."
+            "text": "Yes. JoySpend's core money manager is free forever: unlimited transactions and budgets, emotion tracking, visual insights, recurring transactions, multi-currency, and multi-device sync when you sign in. Optional Plus and Pro subscriptions add AI features."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do Plus and Pro add?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plus adds an AI spending assistant with 30 chats a day, chat-based expense logging, and personalized spending insights. Pro includes Plus and adds 200 daily AI chats, financial goal planning and tracking, and goal-aware financial coaching."
           }
         },
         {
@@ -270,6 +281,33 @@
             text-decoration: none;
             white-space: nowrap;
         }
+
+        .billing-toggle {
+            display: inline-flex;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            margin-top: 1.75rem;
+            background: #F1F5F9;
+            border: 1px solid #E2E8F0;
+            border-radius: 9999px;
+        }
+        .billing-toggle-button {
+            border: 0;
+            border-radius: 9999px;
+            padding: 0.6rem 1rem;
+            background: transparent;
+            color: #64748B;
+            font: inherit;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .billing-toggle-button.is-active {
+            background: #FFFFFF;
+            color: #1E3A8A;
+            box-shadow: 0 2px 7px rgba(15, 23, 42, 0.12);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -281,7 +319,7 @@
             <img src="/icon.png" alt="JoySpend" class="app-install-icon">
             <div class="app-install-text">
                 <strong>JoySpend</strong>
-                <span>Free · Track Expenses with Joy</span>
+                <span>Mindful money, optional AI support</span>
             </div>
             <a id="app-install-link" href="#" target="_blank" rel="noopener noreferrer" class="app-install-btn">Open</a>
         </div>
@@ -299,7 +337,9 @@
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
                     <a href="#home" class="hover:joy-blue-text transition-colors">Home</a>
                     <a href="#features" class="hover:joy-blue-text transition-colors">Features</a>
+                    <a href="#plans" class="hover:joy-blue-text transition-colors">Plans</a>
                     <a href="/privacy" class="hover:joy-blue-text transition-colors">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors">Delete account</a>
                     <a href="/blog/" class="hover:joy-blue-text transition-colors">Blog</a>
                     <a href="#download" class="hover:joy-blue-text transition-colors">Support</a>
                 </div>
@@ -323,10 +363,10 @@
             </div>
             
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Spend Mindfully.<br><span class="gradient-text">Live Joyfully.</span>
+                Spend Mindfully.<br><span class="gradient-text">Grow with clarity.</span>
             </h1>
             <p class="text-lg text-slate-500 leading-relaxed max-w-lg mb-8">
-                Track your expenses, tag your emotions, and discover what truly brings you joy. The only expense tracker that helps you understand <span class="text-slate-900 font-semibold">how your money makes you feel.</span>
+                Track your expenses, tag your emotions, and discover what truly brings you joy. Start with a full, free money manager — then bring in AI support when you want a clearer next step.
             </p>
             
             <!-- Store Badges -->
@@ -345,7 +385,7 @@
                 <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
-                Free to download · Works offline · Optional cloud sync
+                Free core money manager · Works offline · Optional AI plans
             </p>
         </div>
 
@@ -438,8 +478,8 @@
     <section id="features" class="bg-slate-50 py-16">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Financial Clarity, Emotional Growth</h2>
-                <p class="text-slate-500 max-w-xl mx-auto text-lg">Your spending habits say a lot about you. We help you listen to what they're saying.</p>
+                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">A real money manager — before any upgrade</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">JoySpend's core tools are free forever. Plus and Pro build on them with AI help, so you can choose the level of guidance that fits your life.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div class="flat-card p-10 rounded-app">
@@ -476,6 +516,83 @@
                     <p class="text-slate-500 leading-relaxed">Beautiful in light or dark. Your eyes will thank you during those late-night expense reviews.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Choose your level of support</span>
+                <h2 class="text-4xl font-black text-slate-900 mt-5 mb-4 tracking-tight">Start free. Add AI when it helps.</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Your essential money tools never disappear behind a paywall. Paid plans are for people who want a more conversational, goal-focused partner in their financial life.</p>
+                <div class="billing-toggle" role="group" aria-label="Choose a billing period">
+                    <button type="button" class="billing-toggle-button is-active" data-billing-toggle="monthly" aria-pressed="true">Monthly</button>
+                    <button type="button" class="billing-toggle-button" data-billing-toggle="annual" aria-pressed="false">Annual</button>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+                <article class="flat-card p-8 rounded-[2rem] flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-slate-900">Free</h3>
+                            <p class="text-sm font-semibold text-blue-600 mt-1">Emotion-first money manager</p>
+                        </div>
+                        <span class="text-sm font-bold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Always free</span>
+                    </div>
+                    <p class="text-4xl font-black text-slate-900 mb-1">$0<span class="text-base font-medium text-slate-400"> / forever</span></p>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-7">Everything you need to understand your money and spend with more intention.</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex gap-3"><span class="text-blue-600 font-bold">✓</span>Unlimited transactions and budgets</li>
+                        <li class="flex gap-3"><span class="text-blue-600 font-bold">✓</span>Emotion tracking and visual insights</li>
+                        <li class="flex gap-3"><span class="text-blue-600 font-bold">✓</span>Recurring transactions and multi-currency</li>
+                        <li class="flex gap-3"><span class="text-blue-600 font-bold">✓</span>Multi-device sync when signed in</li>
+                    </ul>
+                    <a href="#download" class="mt-auto text-center border border-blue-200 text-blue-700 hover:bg-blue-50 px-5 py-3 rounded-full font-bold text-sm transition-colors">Get the free app</a>
+                </article>
+
+                <article class="relative p-8 rounded-[2rem] flex flex-col border-2 border-indigo-500 shadow-xl shadow-indigo-100 bg-gradient-to-b from-indigo-50/70 to-white">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap">Most popular</span>
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-slate-900">Plus</h3>
+                            <p class="text-sm font-semibold text-indigo-600 mt-1">AI Spending Assistant</p>
+                        </div>
+                        <span class="text-2xl">✦</span>
+                    </div>
+                    <p class="text-4xl font-black text-slate-900 mb-1" data-billing-price data-monthly-price="$5.99" data-annual-price="$65.99" aria-live="polite"><span data-price-value>$5.99</span><span class="text-base font-medium text-slate-400" data-price-period> / month</span></p>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-7">For a smarter daily check-in with the spending decisions you are making.</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Includes the full free money manager, plus:</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex gap-3"><span class="text-indigo-600 font-bold">✓</span>30 AI chats per day</li>
+                        <li class="flex gap-3"><span class="text-indigo-600 font-bold">✓</span>Log expenses simply by chatting</li>
+                        <li class="flex gap-3"><span class="text-indigo-600 font-bold">✓</span>Personalized spending insights and answers</li>
+                    </ul>
+                    <a href="#download" class="mt-auto text-center bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-full font-bold text-sm transition-colors shadow-lg shadow-indigo-200">Start your free trial in the app</a>
+                </article>
+
+                <article class="flat-card p-8 rounded-[2rem] flex flex-col border-purple-100">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-slate-900">Pro</h3>
+                            <p class="text-sm font-semibold text-purple-600 mt-1">AI Financial Coach</p>
+                        </div>
+                        <span class="text-2xl">◇</span>
+                    </div>
+                    <p class="text-4xl font-black text-slate-900 mb-1" data-billing-price data-monthly-price="$8.99" data-annual-price="$89.99" aria-live="polite"><span data-price-value>$8.99</span><span class="text-base font-medium text-slate-400" data-price-period> / month</span></p>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-7">For deeper, goal-aware guidance that helps turn intention into a plan.</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Everything in Plus, with:</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex gap-3"><span class="text-purple-600 font-bold">✓</span>200 AI chats per day</li>
+                        <li class="flex gap-3"><span class="text-purple-600 font-bold">✓</span>AI goal planning and progress tracking</li>
+                        <li class="flex gap-3"><span class="text-purple-600 font-bold">✓</span>Goal-aware financial coaching</li>
+                    </ul>
+                    <a href="#download" class="mt-auto text-center border border-purple-200 text-purple-700 hover:bg-purple-50 px-5 py-3 rounded-full font-bold text-sm transition-colors">Explore Pro in the app</a>
+                </article>
+            </div>
+
+            <p class="mt-7 text-center text-xs text-slate-400" data-billing-summary>A 7-day free trial with 30 Copilot messages is available in the app. Prices are shown in USD and may vary by store, region, or tax.</p>
         </div>
     </section>
 
@@ -579,20 +696,38 @@
         <div class="space-y-4" id="faq-list">
             <div class="border border-slate-100 rounded-2xl overflow-hidden">
                 <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
-                    Is JoySpend really free?
+                    Is JoySpend free to use?
                     <span class="text-slate-400 text-xl faq-icon">+</span>
                 </button>
                 <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-                    Yes — completely free to download and use on both iOS and Android. No subscriptions, no paywalled features, no ads. Ever.
+                    Yes. JoySpend's full core money manager is free forever: unlimited transactions and budgets, emotion tracking and insights, recurring transactions, multi-currency, and multi-device sync when you sign in. Plus and Pro are optional AI upgrades — they do not take away the core tools.
                 </div>
             </div>
             <div class="border border-slate-100 rounded-2xl overflow-hidden">
                 <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
-                    Does it work without an internet connection?
+                    What do Plus and Pro unlock?
                     <span class="text-slate-400 text-xl faq-icon">+</span>
                 </button>
                 <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-                    Yes. JoySpend is local-first — all your data is stored on your device. You only need internet if you choose to enable optional cloud sync across devices.
+                    Plus gives you an AI spending assistant: 30 chats a day, chat-based expense logging, and personalized spending insights. Pro includes Plus and adds 200 AI chats a day, goal planning and progress tracking, and goal-aware financial coaching.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Is there a trial for the AI plans?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Yes. The app offers a 7-day free trial with 30 Copilot messages, so you can experience the AI support before deciding whether to subscribe. You can manage or cancel a subscription through your app store.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
+                    Does JoySpend work without an internet connection?
+                    <span class="text-slate-400 text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    Yes. JoySpend is local-first, so your core expense tracking works on your device without an internet connection. You only need a connection for optional cloud sync and AI features.
                 </div>
             </div>
             <div class="border border-slate-100 rounded-2xl overflow-hidden">
@@ -604,32 +739,14 @@
                     Never. Your spending habits are yours alone. JoySpend will never sell, share, or monetise your personal data or transaction history.
                 </div>
             </div>
-            <div class="border border-slate-100 rounded-2xl overflow-hidden">
-                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
-                    What currencies does JoySpend support?
-                    <span class="text-slate-400 text-xl faq-icon">+</span>
-                </button>
-                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-                    JoySpend supports 12+ currencies with live exchange rates — making it ideal for travelers, expats, and anyone who spends across borders.
-                </div>
-            </div>
-            <div class="border border-slate-100 rounded-2xl overflow-hidden">
-                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle">
-                    Is JoySpend available on both iOS and Android?
-                    <span class="text-slate-400 text-xl faq-icon">+</span>
-                </button>
-                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-                    Yes. JoySpend is available as a free download on the Apple App Store and Google Play Store.
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- DOWNLOAD CTA SECTION -->
     <section id="download" class="bg-slate-900 py-16 rounded-[4rem] mx-4 mt-8 mb-2 text-center text-white">
         <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-4xl font-black mb-6">Start Your Mindful Spending Journey</h2>
-            <p class="text-slate-400 text-lg mb-10">Free to download. No account required. Your data stays on your device.</p>
+            <h2 class="text-4xl font-black mb-6">Start with clarity. Grow with support.</h2>
+            <p class="text-slate-400 text-lg mb-10">Your essential money manager is free forever. Add AI insights and coaching only when they are useful to you.</p>
             
             <!-- Store Badges (centered) -->
             <div class="flex flex-wrap justify-center gap-4 mb-10">
@@ -674,6 +791,7 @@
             </div>
             <div class="flex items-center gap-6 text-sm font-semibold text-slate-400">
                 <a href="/privacy" class="hover:text-slate-700 transition-colors">Privacy</a>
+                <a href="/delete-account" class="hover:text-slate-700 transition-colors">Delete account</a>
                 <a href="mailto:support@joyspend.tech" class="hover:text-slate-700 transition-colors">Support</a>
                 <a href="https://buymeacoffee.com/joyspend" target="_blank" rel="noopener noreferrer" class="hover:text-slate-700 transition-colors flex items-center gap-1.5">
                     <span>☕</span> Support the Developer
@@ -713,6 +831,38 @@
                     icon.textContent = '−';
                 }
             });
+        });
+
+        // ===========================================
+        // PLAN BILLING PERIOD
+        // ===========================================
+        const billingToggleButtons = document.querySelectorAll('[data-billing-toggle]');
+        const billingPriceElements = document.querySelectorAll('[data-billing-price]');
+        const billingSummary = document.querySelector('[data-billing-summary]');
+
+        function setBillingPeriod(period) {
+            const isAnnual = period === 'annual';
+
+            billingToggleButtons.forEach(button => {
+                const isSelected = button.dataset.billingToggle === period;
+                button.classList.toggle('is-active', isSelected);
+                button.setAttribute('aria-pressed', String(isSelected));
+            });
+
+            billingPriceElements.forEach(priceElement => {
+                priceElement.querySelector('[data-price-value]').textContent = isAnnual
+                    ? priceElement.dataset.annualPrice
+                    : priceElement.dataset.monthlyPrice;
+                priceElement.querySelector('[data-price-period]').textContent = isAnnual ? ' / year' : ' / month';
+            });
+
+            billingSummary.textContent = isAnnual
+                ? 'Annual plans are billed once per year: $65.99/year for Plus and $89.99/year for Pro. Prices are shown in USD and may vary by store, region, or tax.'
+                : 'A 7-day free trial with 30 Copilot messages is available in the app. Prices are shown in USD and may vary by store, region, or tax.';
+        }
+
+        billingToggleButtons.forEach(button => {
+            button.addEventListener('click', () => setBillingPeriod(button.dataset.billingToggle));
         });
     </script>
 
