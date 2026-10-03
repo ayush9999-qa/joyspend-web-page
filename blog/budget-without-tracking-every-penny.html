@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Budget Without Tracking Every Penny — JoySpend Blog</title>
@@ -15,11 +17,11 @@
     <meta property="og:url" content="https://joyspend.tech/blog/budget-without-tracking-every-penny.html">
     <meta property="og:title" content="How to Budget Without Tracking Every Penny">
     <meta property="og:description" content="Practical budgeting strategies that don't require obsessive tracking. Less effort, better results.">
-    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image" content="https://joyspend.tech/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Budget Without Tracking Every Penny">
     <meta name="twitter:description" content="Stop logging every coffee. Here's how to budget effectively without tracking every single expense.">
-    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+    <meta name="twitter:image" content="https://joyspend.tech/favicon.png">
 
     <script type="application/ld+json">
     {
@@ -32,7 +34,7 @@
       "datePublished": "2026-03-08",
       "dateModified": "2026-03-08",
       "url": "https://joyspend.tech/blog/budget-without-tracking-every-penny.html",
-      "image": "https://joyspend.tech/og-image.png",
+      "image": "https://joyspend.tech/favicon.png",
       "mainEntityOfPage": "https://joyspend.tech/blog/budget-without-tracking-every-penny.html"
     }
     </script>
@@ -160,17 +162,24 @@
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 no-underline">
+            <a href="/" aria-label="JoySpend home" class="flex items-center gap-3 no-underline">
+                <!-- JOYSPEND LOGO -->
                 <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                    <a href="/" class="hover:joy-blue-text transition-colors">Home</a>
-                    <a href="/#features" class="hover:joy-blue-text transition-colors">Features</a>
-                    <a href="/blog/" class="joy-blue-text transition-colors">Blog</a>
-                    <a href="/#download" class="hover:joy-blue-text transition-colors">Support</a>
+                    <a href="/#home" class="hover:joy-blue-text transition-colors" data-nav-link="home">Home</a>
+                    <a href="/#features" class="hover:joy-blue-text transition-colors" data-nav-link="features">Features</a>
+                    <a href="/#plans" class="hover:joy-blue-text transition-colors" data-nav-link="plans">Plans</a>
+                    <a href="/privacy" class="hover:joy-blue-text transition-colors" data-nav-link="privacy">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors" data-nav-link="delete-account">Delete account</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors" data-nav-link="blog" aria-current="page">Blog</a>
+                    <a href="/#download" class="hover:joy-blue-text transition-colors" data-nav-link="download">Support</a>
                 </div>
+                <a href="/#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+                    Download
+                </a>
             </div>
         </div>
     </nav>
@@ -251,7 +260,7 @@
                 <strong>The insight:</strong> When you track the <em>emotional</em> outcome of purchases, you naturally start spending more on what makes you happy and less on what doesn't — without needing a strict budget.
             </div>
             <p>
-                This is the core philosophy behind <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a>. Instead of obsessing over every dollar, you tag each expense with a "joy rating" from 1 to 5. Over time, patterns emerge: you discover that experiences bring more joy than things, that cooking at home scores higher than takeout, that planned purchases feel better than impulse buys.
+                This is the core philosophy behind <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a>. Instead of obsessing over every dollar, you tag each expense with an emotion: Joyful, Good, Okay or Regret. Over time, patterns emerge: you discover that experiences bring more joy than things, that cooking at home scores higher than takeout, that planned purchases feel better than impulse buys.
             </p>
             <p>
                 The result? Your spending naturally shifts toward what truly matters to you — no spreadsheets, strict budgets, or guilt required.
@@ -312,7 +321,7 @@
     <section class="bg-slate-900 py-14 rounded-[3rem] mx-4 mb-4 text-center text-white">
         <div class="max-w-2xl mx-auto px-6">
             <h2 class="text-3xl font-black mb-4">Budget Smarter, Not Harder</h2>
-            <p class="text-slate-400 mb-8">JoySpend is 100% free. Track emotions, not just expenses. No account required.</p>
+            <p class="text-slate-400 mb-8">JoySpend’s core tracking is free; AI plans are optional paid upgrades. Track emotions, not just expenses. No account required.</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" class="inline-block rounded-xl overflow-hidden hover:translate-y-[-3px] transition-transform">
                     <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-14">
@@ -368,5 +377,6 @@
         });
     })();
     </script>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>

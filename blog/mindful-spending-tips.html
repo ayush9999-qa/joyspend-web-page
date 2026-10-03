@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Ways Mindful Spending Can Improve Your Life — JoySpend Blog</title>
@@ -15,11 +17,11 @@
     <meta property="og:url" content="https://joyspend.tech/blog/mindful-spending-tips.html">
     <meta property="og:title" content="5 Ways Mindful Spending Can Improve Your Life">
     <meta property="og:description" content="Learn practical tips for intentional spending that reduce stress and increase happiness.">
-    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image" content="https://joyspend.tech/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="5 Ways Mindful Spending Can Improve Your Life">
     <meta name="twitter:description" content="Practical mindful spending tips to align your purchases with your values.">
-    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+    <meta name="twitter:image" content="https://joyspend.tech/favicon.png">
 
     <!-- Article Structured Data -->
     <script type="application/ld+json">
@@ -33,7 +35,7 @@
       "datePublished": "2026-02-16",
       "dateModified": "2026-02-16",
       "url": "https://joyspend.tech/blog/mindful-spending-tips.html",
-      "image": "https://joyspend.tech/og-image.png",
+      "image": "https://joyspend.tech/favicon.png",
       "mainEntityOfPage": "https://joyspend.tech/blog/mindful-spending-tips.html"
     }
     </script>
@@ -154,17 +156,24 @@
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 no-underline">
+            <a href="/" aria-label="JoySpend home" class="flex items-center gap-3 no-underline">
+                <!-- JOYSPEND LOGO -->
                 <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                    <a href="/" class="hover:joy-blue-text transition-colors">Home</a>
-                    <a href="/#features" class="hover:joy-blue-text transition-colors">Features</a>
-                    <a href="/blog/" class="joy-blue-text transition-colors">Blog</a>
-                    <a href="/#download" class="hover:joy-blue-text transition-colors">Support</a>
+                    <a href="/#home" class="hover:joy-blue-text transition-colors" data-nav-link="home">Home</a>
+                    <a href="/#features" class="hover:joy-blue-text transition-colors" data-nav-link="features">Features</a>
+                    <a href="/#plans" class="hover:joy-blue-text transition-colors" data-nav-link="plans">Plans</a>
+                    <a href="/privacy" class="hover:joy-blue-text transition-colors" data-nav-link="privacy">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors" data-nav-link="delete-account">Delete account</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors" data-nav-link="blog" aria-current="page">Blog</a>
+                    <a href="/#download" class="hover:joy-blue-text transition-colors" data-nav-link="download">Support</a>
                 </div>
+                <a href="/#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+                    Download
+                </a>
             </div>
         </div>
     </nav>
@@ -199,7 +208,7 @@
 
             <h2 class="text-2xl font-bold text-slate-900">2. Discover What Actually Makes You Happy</h2>
             <p>
-                Research consistently shows that experiences bring more lasting happiness than material possessions. But without tracking, it's hard to know which spending truly brings joy. When you rate each purchase on a joy scale — like JoySpend's 1-to-5 rating system — patterns emerge. You might discover that your $5 daily coffee brings more happiness than an expensive gadget that lost its novelty in a week.
+                Research consistently shows that experiences bring more lasting happiness than material possessions. But without tracking, it's hard to know which spending truly brings joy. When you tag purchases Joyful, Good, Okay, or Regret in JoySpend, patterns can emerge. Your Joy Score summarizes those emotion tags, weighted by the amounts spent. You might discover that your $5 daily coffee brings more happiness than an expensive gadget that lost its novelty in a week.
             </p>
             <p>
                 This data-driven approach to happiness isn't abstract; it's personal and actionable. You start redirecting money toward what genuinely fulfills you.
@@ -296,5 +305,6 @@
         });
     })();
     </script>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>

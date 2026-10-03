@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Tracking Emotions With Expenses Matters — JoySpend Blog</title>
@@ -15,11 +17,11 @@
     <meta property="og:url" content="https://joyspend.tech/blog/emotion-tracking-expenses.html">
     <meta property="og:title" content="Why Tracking Emotions With Expenses Matters">
     <meta property="og:description" content="Discover how emotion-aware expense tracking can transform your financial well-being.">
-    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image" content="https://joyspend.tech/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Why Tracking Emotions With Expenses Matters">
     <meta name="twitter:description" content="Pairing feelings with transactions reveals spending patterns you never knew you had.">
-    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+    <meta name="twitter:image" content="https://joyspend.tech/favicon.png">
 
     <script type="application/ld+json">
     {
@@ -32,7 +34,7 @@
       "datePublished": "2026-02-14",
       "dateModified": "2026-02-14",
       "url": "https://joyspend.tech/blog/emotion-tracking-expenses.html",
-      "image": "https://joyspend.tech/og-image.png",
+      "image": "https://joyspend.tech/favicon.png",
       "mainEntityOfPage": "https://joyspend.tech/blog/emotion-tracking-expenses.html"
     }
     </script>
@@ -153,17 +155,24 @@
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 no-underline">
+            <a href="/" aria-label="JoySpend home" class="flex items-center gap-3 no-underline">
+                <!-- JOYSPEND LOGO -->
                 <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                    <a href="/" class="hover:joy-blue-text transition-colors">Home</a>
-                    <a href="/#features" class="hover:joy-blue-text transition-colors">Features</a>
-                    <a href="/blog/" class="joy-blue-text transition-colors">Blog</a>
-                    <a href="/#download" class="hover:joy-blue-text transition-colors">Support</a>
+                    <a href="/#home" class="hover:joy-blue-text transition-colors" data-nav-link="home">Home</a>
+                    <a href="/#features" class="hover:joy-blue-text transition-colors" data-nav-link="features">Features</a>
+                    <a href="/#plans" class="hover:joy-blue-text transition-colors" data-nav-link="plans">Plans</a>
+                    <a href="/privacy" class="hover:joy-blue-text transition-colors" data-nav-link="privacy">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors" data-nav-link="delete-account">Delete account</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors" data-nav-link="blog" aria-current="page">Blog</a>
+                    <a href="/#download" class="hover:joy-blue-text transition-colors" data-nav-link="download">Support</a>
                 </div>
+                <a href="/#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+                    Download
+                </a>
             </div>
         </div>
     </nav>
@@ -200,10 +209,10 @@
 
             <h2 class="text-2xl font-bold text-slate-900">How Emotion Tags Change Your Behavior</h2>
             <p>
-                When you start tagging transactions with emotions — say, a simple joy rating from 1 to 5 — something interesting happens. You create a feedback loop. After a few weeks, you can see at a glance which categories bring you genuine happiness and which consistently leave you feeling regretful or indifferent.
+                When you start tagging transactions with emotions — say, one of four emotions: Joyful, Good, Okay or Regret — something interesting happens. You create a feedback loop. After a few weeks, you can see at a glance which categories bring you genuine happiness and which consistently leave you feeling regretful or indifferent.
             </p>
             <p>
-                This is exactly what <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a> was designed to do. Every time you log an expense, you rate it on a joy scale. The app's analytics then break down your spending by emotion, giving you insights like:
+                This is exactly what <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a> was designed to do. When you log an expense, you tag it Joyful, Good, Okay, or Regret. Your Joy Score is calculated from these emotion tags, weighted by the amounts spent. The app's analytics then break down your spending by emotion, giving you insights like:
             </p>
             <ul class="list-disc pl-6 space-y-2 mb-5">
                 <li><strong>High joy, low cost:</strong> Morning walks with coffee — $4 but rated 5/5 joy</li>
@@ -225,7 +234,7 @@
             </p>
             <ol class="list-decimal pl-6 space-y-3 mb-5">
                 <li><strong>Log every transaction</strong> — Use an app like JoySpend that makes this take under 10 seconds per entry.</li>
-                <li><strong>Rate your joy</strong> — After each purchase, ask "How happy did this make me?" and rate it 1-5.</li>
+                <li><strong>Tag the feeling</strong> — Choose Joyful, Good, Okay or Regret, and review the selected emotion before saving.</li>
                 <li><strong>Review weekly</strong> — Spend 5 minutes each Sunday looking at your joy breakdown by category. You'll be surprised by what you find.</li>
             </ol>
 
@@ -299,5 +308,6 @@
         });
     })();
     </script>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>

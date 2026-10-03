@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — JoySpend</title>
@@ -188,17 +190,20 @@
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 no-underline">
+            <a href="/" aria-label="JoySpend home" class="flex items-center gap-3 no-underline">
+                <!-- JOYSPEND LOGO -->
                 <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                    <a href="/" class="hover:joy-blue-text transition-colors">Home</a>
-                    <a href="/#features" class="hover:joy-blue-text transition-colors">Features</a>
-                    <a href="/privacy" class="joy-blue-text transition-colors">Privacy</a>
-                    <a href="/blog/" class="hover:joy-blue-text transition-colors">Blog</a>
-                    <a href="/#download" class="hover:joy-blue-text transition-colors">Support</a>
+                    <a href="/#home" class="hover:joy-blue-text transition-colors" data-nav-link="home">Home</a>
+                    <a href="/#features" class="hover:joy-blue-text transition-colors" data-nav-link="features">Features</a>
+                    <a href="/#plans" class="hover:joy-blue-text transition-colors" data-nav-link="plans">Plans</a>
+                    <a href="/privacy" class="hover:joy-blue-text transition-colors" data-nav-link="privacy" aria-current="page">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors" data-nav-link="delete-account">Delete account</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors" data-nav-link="blog">Blog</a>
+                    <a href="/#download" class="hover:joy-blue-text transition-colors" data-nav-link="download">Support</a>
                 </div>
                 <a href="/#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
                     Download
@@ -236,10 +241,11 @@
             <h3 style="font-weight: 700; color: #334155; margin: 1.25rem 0 0.5rem; font-size: 1.05rem;">Data stored locally on your device</h3>
             <ul>
                 <li>Transaction details — amounts, categories, dates, and notes</li>
-                <li>Joy ratings (1–5) assigned to each transaction</li>
+                <li>Emotion tags (Joyful, Good, Okay, or Regret) assigned to transactions and used to calculate your Joy Score</li>
                 <li>Budget and recurring expense configurations</li>
                 <li>Currency preferences and app settings</li>
             </ul>
+            <p>Your Joy Score is a calculated, amount-weighted summary of expense emotion tags. It is separate from the four emotion choices you select for a transaction.</p>
 
             <h3 style="font-weight: 700; color: #334155; margin: 1.25rem 0 0.5rem; font-size: 1.05rem;">Data synced to the cloud (optional)</h3>
             <ul>
@@ -376,5 +382,6 @@
         });
     })();
     </script>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>

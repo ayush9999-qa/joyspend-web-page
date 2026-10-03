@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 50/30/20 Budget Rule: Does It Actually Work? — JoySpend Blog</title>
@@ -15,11 +17,11 @@
     <meta property="og:url" content="https://joyspend.tech/blog/50-30-20-budget-rule.html">
     <meta property="og:title" content="The 50/30/20 Budget Rule: Does It Actually Work?">
     <meta property="og:description" content="The most popular budgeting method explained, when it works, when it doesn't, and a smarter alternative.">
-    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image" content="https://joyspend.tech/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The 50/30/20 Budget Rule: Does It Actually Work?">
     <meta name="twitter:description" content="We break down the 50/30/20 rule — when it works, when it doesn't, and what to do instead.">
-    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+    <meta name="twitter:image" content="https://joyspend.tech/favicon.png">
 
     <script type="application/ld+json">
     {
@@ -168,17 +170,24 @@
     <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 no-underline">
+            <a href="/" aria-label="JoySpend home" class="flex items-center gap-3 no-underline">
+                <!-- JOYSPEND LOGO -->
                 <img src="/icon.png" alt="JoySpend" class="w-10 h-10 rounded-xl shadow-lg shadow-blue-500/20">
                 <span class="font-extrabold text-xl tracking-tight text-slate-900">JoySpend</span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <div class="flex gap-10 font-bold text-slate-500 text-sm uppercase tracking-wide">
-                    <a href="/" class="hover:joy-blue-text transition-colors">Home</a>
-                    <a href="/#features" class="hover:joy-blue-text transition-colors">Features</a>
-                    <a href="/blog/" class="joy-blue-text transition-colors">Blog</a>
-                    <a href="/#download" class="hover:joy-blue-text transition-colors">Support</a>
+                    <a href="/#home" class="hover:joy-blue-text transition-colors" data-nav-link="home">Home</a>
+                    <a href="/#features" class="hover:joy-blue-text transition-colors" data-nav-link="features">Features</a>
+                    <a href="/#plans" class="hover:joy-blue-text transition-colors" data-nav-link="plans">Plans</a>
+                    <a href="/privacy" class="hover:joy-blue-text transition-colors" data-nav-link="privacy">Privacy</a>
+                    <a href="/delete-account" class="hover:joy-blue-text transition-colors" data-nav-link="delete-account">Delete account</a>
+                    <a href="/blog/" class="hover:joy-blue-text transition-colors" data-nav-link="blog" aria-current="page">Blog</a>
+                    <a href="/#download" class="hover:joy-blue-text transition-colors" data-nav-link="download">Support</a>
                 </div>
+                <a href="/#download" class="joy-blue text-white px-5 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+                    Download
+                </a>
             </div>
         </div>
     </nav>
@@ -380,7 +389,7 @@
                 What if instead of rigidly categorizing spending as "needs" vs "wants," you categorized by <strong>how much satisfaction each purchase brings</strong>?
             </p>
             <p>
-                This is the core insight behind <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend's emotion tracking</a>. Every expense gets a joy rating from 1 to 5. Over time, you don't need arbitrary budget categories — your spending data tells you exactly which expenses are worth it and which aren't.
+                This is the core insight behind <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend's emotion tracking</a>. Tag expenses Joyful, Good, Okay or Regret. Over time, you don't need arbitrary budget categories — your emotion tags can help you reflect on which purchases felt worthwhile.
             </p>
 
             <div class="callout">
@@ -401,7 +410,7 @@
     <section class="bg-slate-900 py-14 rounded-[3rem] mx-4 mb-4 text-center text-white">
         <div class="max-w-2xl mx-auto px-6">
             <h2 class="text-3xl font-black mb-4">Budget Smarter With Emotion Tracking</h2>
-            <p class="text-slate-400 mb-8">Go beyond percentages. Understand what makes your spending worthwhile. Free forever.</p>
+            <p class="text-slate-400 mb-8">Go beyond percentages. Understand what makes your spending worthwhile. Free core; optional paid AI.</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" class="inline-block rounded-xl overflow-hidden hover:translate-y-[-3px] transition-transform">
                     <img src="/app-store-badge.svg" alt="Download on the App Store" class="h-14">
@@ -457,5 +466,6 @@
         });
     })();
     </script>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>

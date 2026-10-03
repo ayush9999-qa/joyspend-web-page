@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* A light current-page indicator without changing navigation spacing. */
+nav [data-nav-link][aria-current] {
+  color: #2D5BFF;
+  background-color: #EFF4FF;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 0 8px #EFF4FF;
+}
