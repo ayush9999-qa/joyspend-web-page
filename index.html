@@ -34,6 +34,10 @@
     <meta name="application-name" content="JoySpend">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2D5BFF">
+    <!-- Google Search Console: paste the HTML-tag verification meta here.
+         Search Console provides a tag like
+         <meta name="google-site-verification" content="TOKEN_FROM_SEARCH_CONSOLE">
+         Do not invent a token. Leave this comment until you have the real tag. -->
     <link rel="canonical" href="https://joyspend.tech/">
     
     <!-- Open Graph / Social Sharing -->
@@ -41,13 +45,16 @@
     <meta property="og:url" content="https://joyspend.tech/">
     <meta property="og:title" content="JoySpend — Expense Tracking with Emotion Insights">
     <meta property="og:description" content="Understand where your money goes and how purchases feel. Free core tracking, with optional paid AI assistance.">
-    <meta property="og:image" content="https://joyspend.tech/favicon.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="https://joyspend.tech/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JoySpend — Track how every expense makes you feel">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JoySpend — Understand Your Spending">
     <meta name="twitter:description" content="Understand where your money goes and how purchases feel. Free core tracking, with optional paid AI assistance.">
-    <meta name="twitter:image" content="https://joyspend.tech/favicon.png">
+    <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
+    <meta name="twitter:image:alt" content="JoySpend — Track how every expense makes you feel">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -55,6 +62,10 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "JoySpend",
+  "alternateName": [
+    "JoySpend: Expense Tracker",
+    "JoySpend: Mood Expense Tracker"
+  ],
   "operatingSystem": "iOS, Android",
   "applicationCategory": "FinanceApplication",
   "offers": [
@@ -63,6 +74,20 @@
       "name": "Free core tracking",
       "price": "0",
       "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Plus",
+      "price": "5.99",
+      "priceCurrency": "USD",
+      "description": "Optional monthly AI spending assistant. Annual reference price is $65.99."
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "8.99",
+      "priceCurrency": "USD",
+      "description": "Optional monthly AI goal assistant. Annual reference price is $89.99."
     }
   ],
   "image": "https://joyspend.tech/favicon.png",
@@ -311,6 +336,36 @@
             color: #1E3A8A;
             box-shadow: 0 2px 7px rgba(15, 23, 42, 0.12);
         }
+        .screenshot-row {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 0.25rem 0.25rem 1rem;
+            scroll-snap-type: x mandatory;
+        }
+        .screenshot-card {
+            flex: 0 0 220px;
+            scroll-snap-align: start;
+        }
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 1.75rem;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 22px 40px -28px rgba(15, 23, 42, 0.55);
+            background: #0B1228;
+        }
+        .screenshot-card figcaption {
+            margin-top: 0.75rem;
+            color: #64748B;
+            font-size: 0.8125rem;
+            line-height: 1.45;
+            text-align: center;
+        }
+        @media (min-width: 1024px) {
+            .screenshot-row { justify-content: center; }
+            .screenshot-card { flex-basis: 240px; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -375,14 +430,15 @@
             <!-- Store Badges -->
             <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
                 <!-- App Store Badge -->
-                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" id="appstore-link" class="store-badge inline-block rounded-xl overflow-hidden">
+                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" id="appstore-link" class="store-badge inline-block rounded-xl overflow-hidden" aria-label="Download JoySpend: Expense Tracker on the App Store">
                     <img src="./app-store-badge.svg" alt="Download on the App Store" class="h-14">
                 </a>
                 <!-- Google Play Badge -->
-                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" id="playstore-link" class="store-badge inline-block rounded-xl overflow-hidden">
+                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" id="playstore-link" class="store-badge inline-block rounded-xl overflow-hidden" aria-label="Get JoySpend: Mood Expense Tracker on Google Play">
                     <img src="./google-play-badge.svg" alt="Get it on Google Play" class="h-14">
                 </a>
             </div>
+            <p class="store-listing-names text-xs text-slate-400 mb-4">App Store: JoySpend: Expense Tracker · Google Play: JoySpend: Mood Expense Tracker</p>
 
             <p class="text-sm text-slate-400 flex items-center gap-2">
                 <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -751,6 +807,34 @@
         </div>
     </section>
 
+    <!-- APP SCREENSHOTS -->
+    <section id="screenshots" class="bg-slate-50 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">See the app</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Screenshots from the App Store listing for JoySpend: Expense Tracker. Tag a purchase, review the month, check insights, and set a budget.</p>
+            </div>
+            <div class="screenshot-row">
+                <figure class="screenshot-card">
+                    <img src="/screenshots/app-store-add-transaction.jpg" alt="App Store screenshot of JoySpend’s Add Transaction screen: a $50 education expense with Joyful selected among Joyful, Good, Okay, and Regret.">
+                    <figcaption>Add an expense and tag how it felt.</figcaption>
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="/screenshots/app-store-transactions.jpg" alt="App Store screenshot of the JoySpend Transactions screen for August 2026, with Joyful, Good, Okay, and Regret filters and entries for restaurants, education, coffee, and movies.">
+                    <figcaption>Review transactions with their emotion tags.</figcaption>
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="/screenshots/app-store-insights.jpg" alt="App Store screenshot of JoySpend Insights showing a Joy-Per-Spend Score of 4.1 out of 5, with Good at 56 percent, Joyful at 38 percent, Regret at 4 percent, and Okay at 2 percent.">
+                    <figcaption>See spending broken down by emotion.</figcaption>
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="/screenshots/app-store-budgets.jpg" alt="App Store screenshot of JoySpend Budget Settings with a monthly total of 1518.97 and category limits for bills, education, entertainment, food, and health.">
+                    <figcaption>Set a monthly budget and category limits.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- DOWNLOAD CTA SECTION -->
     <section id="download" class="bg-slate-900 py-16 rounded-[4rem] mx-4 mt-8 mb-2 text-center text-white">
         <div class="max-w-2xl mx-auto px-6">
@@ -758,14 +842,15 @@
             <p class="text-slate-400 text-lg mb-10">Download for free core tracking. Plus and Pro are optional paid subscriptions for AI assistance.</p>
             
             <!-- Store Badges (centered) -->
-            <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden">
+            <div class="flex flex-wrap justify-center gap-4 mb-2">
+                <a href="https://apps.apple.com/app/joyspend/id6756809900" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden" aria-label="Download JoySpend: Expense Tracker on the App Store">
                     <img src="./app-store-badge.svg" alt="Download on the App Store" class="h-16">
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden">
+                <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" target="_blank" rel="noopener noreferrer" class="store-badge inline-block rounded-xl overflow-hidden" aria-label="Get JoySpend: Mood Expense Tracker on Google Play">
                     <img src="./google-play-badge.svg" alt="Get it on Google Play" class="h-16">
                 </a>
             </div>
+            <p class="store-listing-names text-xs text-slate-400 mt-4">App Store: JoySpend: Expense Tracker · Google Play: JoySpend: Mood Expense Tracker</p>
 
             <div class="section-divider w-24 mx-auto mb-8"></div>
 

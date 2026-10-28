@@ -86,14 +86,14 @@ Use actual production captures from iPhone/iPad. Match every caption to the visi
 
 | Field | Characters | Limit |
 |---|---:|---:|
-| App name | 25 | 30 |
+| App name | 30 | 30 |
 | Short description | 72 | 80 |
 | Full description | 2461 | 4000 |
 
 ### App name
 
 ```text
-JoySpend: Expense Tracker
+JoySpend: Mood Expense Tracker
 ```
 
 ### Short description
