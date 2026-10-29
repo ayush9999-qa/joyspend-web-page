@@ -4,4 +4,7 @@ Disallow: /.git/
 Disallow: /.idea/
 Disallow: /logs/
 
+# Google Search Console HTML-tag verification belongs in the homepage <head>.
+# Search index.html for "Google Search Console" and paste the tag from Search Console.
+# Do not invent a verification token.
 Sitemap: https://joyspend.tech/sitemap.xml
