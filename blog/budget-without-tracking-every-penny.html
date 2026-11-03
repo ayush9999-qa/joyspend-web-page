@@ -7,7 +7,7 @@
     <meta name="apple-itunes-app" content="app-id=6756809900">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Budget Without Tracking Every Penny — JoySpend Blog</title>
-    <meta name="description" content="Tired of logging every coffee and snack? Learn practical budgeting strategies that don't require obsessive tracking — and discover how emotion-aware spending gives you better results with less effort.">
+    <meta name="description" content="Build a budget in one evening: automate savings, cap two or three leaks, and skip logging every coffee. Includes a worked example and a weekly check.">
     <meta name="keywords" content="budgeting tips, how to budget, budget without tracking, easy budgeting, simple budget method, stop tracking every expense, budgeting for beginners, spending awareness">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2D5BFF">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://joyspend.tech/blog/budget-without-tracking-every-penny.html">
     <meta property="og:title" content="How to Budget Without Tracking Every Penny — JoySpend Blog">
-    <meta property="og:description" content="Practical budgeting strategies that don't require obsessive tracking. Less effort, better results.">
+    <meta property="og:description" content="Build a budget in one evening: automate savings, cap two or three leaks, and skip logging every coffee. Includes a worked example and a weekly check.">
     <meta property="og:image" content="https://joyspend.tech/og-image.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="@JoySpend">
     <meta name="twitter:creator" content="@JoySpend">
     <meta name="twitter:title" content="How to Budget Without Tracking Every Penny — JoySpend Blog">
-    <meta name="twitter:description" content="Stop logging every coffee. Here's how to budget effectively without tracking every single expense.">
+    <meta name="twitter:description" content="Build a budget in one evening: automate savings, cap two or three leaks, and skip logging every coffee. Includes a worked example and a weekly check.">
     <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
     <meta name="twitter:image:alt" content="JoySpend — Track how every expense makes you feel">
 
@@ -35,11 +35,11 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "How to Budget Without Tracking Every Penny",
-      "description": "Practical budgeting strategies that don't require obsessive tracking, and how emotion-aware spending gives better results with less effort.",
+      "description": "Build a budget in one evening: automate savings, cap two or three leaks, and skip logging every coffee. Includes a worked example and a weekly check.",
       "author": { "@type": "Organization", "name": "JoySpend" },
       "publisher": { "@type": "Organization", "name": "JoySpend", "url": "https://joyspend.tech/", "logo": { "@type": "ImageObject", "url": "https://joyspend.tech/icon.png" } },
       "datePublished": "2026-03-08",
-      "dateModified": "2026-03-08",
+      "dateModified": "2026-11-03",
       "url": "https://joyspend.tech/blog/budget-without-tracking-every-penny.html",
       "image": "https://joyspend.tech/favicon.png",
       "mainEntityOfPage": "https://joyspend.tech/blog/budget-without-tracking-every-penny.html"
@@ -72,6 +72,54 @@
     }
     </script>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "If I skip small purchases, how do I know I am not overspending?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The payday transfer, the bill list, and the leak caps are the alarm. The ordinary pot is allowed to be fuzzy until it runs low early in the month. If it does, that pot becomes a watched category. You add a log when a category misbehaves, not before. Do not also count a credit-card payment for a purchase already listed as a bill or inside a cap. That payment is the same money, not a new expense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which expenses are safe to leave untracked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bills you already know to the dollar, and small repeats that are not growing. The unsafe ones are the categories that have surprised you recently, plus any charge above a threshold you would not remember a week later. Jordan\u2019s example uses $75. Pick a number that means something on your statement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from not budgeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not budgeting is spending until the account is low, then wondering why. This version moves savings first, names a few caps with a consequence, and looks weekly. The missing receipts are a choice about attention, not an absence of a plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once a week is enough for the three questions. Add a slightly longer look at the end of the month to see which cap, if any, should be replaced. Daily reviews reintroduce the habit you were trying to drop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track feelings without logging every expense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tag only the leak categories. A month of restaurant and shopping tags will show a Regret cluster much faster than a complete ledger of groceries, transit, and rent. Re-open those few entries a week later and update the tag if \u201cstill worth it?\u201d changed."
+      }
+    }
+  ]
+}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -84,6 +132,8 @@
         }
         article h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
         article p { margin-bottom: 1.25rem; }
+        article th, article td { vertical-align: top; }
+        article caption { text-wrap: pretty; }
         .callout {
             background: linear-gradient(135deg, rgba(45, 91, 255, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
             border-left: 4px solid #2D5BFF;
@@ -203,125 +253,162 @@
         <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mt-4 mb-4">
             How to Budget Without Tracking Every Penny
         </h1>
-        <p class="text-slate-400 text-sm mb-10">Published March 8, 2026 · 6 min read</p>
+        <p class="text-slate-400 text-sm mb-10">Published March 8, 2026 · Updated November 3, 2026 · 9 min read</p>
 
         <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed text-lg">
             <p>
-                Let's be honest — tracking every single expense is exhausting. You start with good intentions on January 1st, diligently logging every coffee, every grocery run, every parking meter. By February, you're already behind. By March, you've quietly given up.
+                Logging every coffee, bus fare, and snack feels responsible for about two weeks. Then the log falls behind, and the budget disappears with it. The failure is usually the system, not your character. A purchase you were always going to make does not need its own line if a simpler check would have caught the decisions that actually move the month.
             </p>
             <p>
-                You're not alone. Research shows that <strong>most people abandon detailed expense tracking within 30 days</strong>. The problem isn't willpower — it's that the approach itself is unsustainable for most people.
-            </p>
-            <p>
-                The good news? You don't need to track every penny to have a healthy budget. Here are strategies that actually work long-term.
+                You can still have a budget. You automate the money that must not be spent, cap the few categories that surprise you, and look once a week. The figures in this guide are examples so you can see the order of operations. Copy the order, not the dollars.
             </p>
 
-            <h2 class="text-2xl font-bold text-slate-900">1. The "Pay Yourself First" Method</h2>
+            <h2 class="text-2xl font-bold text-slate-900">What you are allowed to stop tracking</h2>
             <p>
-                Instead of tracking expenses and hoping there's money left over, flip the script. The moment your paycheck arrives, move a fixed percentage into savings and investments <em>first</em>. Whatever's left is yours to spend guilt-free.
-            </p>
-            <div class="callout">
-                <strong>How it works:</strong> Set up automatic transfers — for example, 20% to savings, 10% to investments — on payday. The remaining 70% is your spending money. No tracking needed.
-            </div>
-            <p>
-                This approach works because it removes the need for daily discipline. The hardest financial decision — saving — happens automatically. You can spend what's left without the mental burden of logging every transaction.
-            </p>
-
-            <h2 class="text-2xl font-bold text-slate-900">2. The Envelope System (Digital Version)</h2>
-            <p>
-                The classic envelope method involves putting cash into labeled envelopes — rent, groceries, entertainment. When an envelope is empty, you stop spending in that category. Simple and effective.
+                Penny tracking fails for a practical reason: most lines do not change a decision. The $3 coffee is not the problem if your groceries, rent, and savings are already handled and the coffee is inside a category you are not worried about. The problem is a category that grows while you are busy logging everything else.
             </p>
             <p>
-                The digital version works the same way: create separate bank accounts or use your banking app's "jars" feature. Allocate money to each category at the start of the month. Check your balance before big purchases. That's it — no penny-level tracking required.
-            </p>
-
-            <h2 class="text-2xl font-bold text-slate-900">3. The Anti-Budget: Track Only What Matters</h2>
-            <p>
-                Here's a radical idea: <strong>don't budget at all</strong>. Instead, track only the 2-3 spending categories that tend to get out of hand. For most people, that's dining out, subscriptions, and impulse shopping.
-            </p>
-            <p>
-                Ignoring the small stuff (a coffee here, a bus ticket there) and focusing only on your biggest leaks can be surprisingly effective. You get 80% of the results with 20% of the effort.
-            </p>
-
-            <h2 class="text-2xl font-bold text-slate-900">4. The Weekly Check-In</h2>
-            <p>
-                Rather than tracking in real-time, set aside 10 minutes every Sunday to review your bank statement. Look for patterns, not individual transactions:
+                A lighter budget watches three things only:
             </p>
             <ul class="list-disc pl-6 space-y-2 mb-5">
-                <li>Did I spend significantly more than last week?</li>
-                <li>Were there any surprises or forgotten subscriptions?</li>
-                <li>Am I on track for the month?</li>
+                <li><strong>The transfer that leaves on payday</strong> — real savings, and any extra payment on debt you are already carrying, before spending starts. A card payment for new purchases is not this transfer.</li>
+                <li><strong>Bills that leave on their own</strong> — rent, utilities, insurance, a phone plan, a transit pass. You check that they are still the amounts you think they are. You do not re-categorize them daily.</li>
+                <li><strong>Two or three leak categories</strong> — the places a month goes wrong for you. For many people that is restaurants and delivery, online shopping, or rides. Yours might be different. Pick the ones that have surprised you, not a generic list.</li>
             </ul>
             <p>
-                This "batch review" approach gives you awareness without the daily grind. It's like checking the scoreboard at halftime instead of keeping score every second.
+                Everything else can stay in one “ordinary spending” pot. You notice that pot only if it runs out early. This is not the same as ignoring money. It is refusing to spend attention on purchases that are not the leak.
             </p>
 
-            <h2 class="text-2xl font-bold text-slate-900">5. Track How You Feel, Not What You Spend</h2>
+            <h2 class="text-2xl font-bold text-slate-900">Build it in one evening</h2>
             <p>
-                This is where things get interesting. What if, instead of logging amounts, you logged <em>how purchases made you feel</em>?
+                <strong>Example only.</strong> Jordan takes home $3,200 a month. The steps work the same at other incomes. Do them in this order so the caps are whatever is actually left, not a wish.
+            </p>
+            <ol class="list-decimal pl-6 space-y-3 mb-5">
+                <li><strong>Write the take-home number you can count on.</strong> Jordan uses $3,200. If your pay swings, use a cautious month, the same idea as the floor in the <a href="/blog/50-30-20-budget-rule.html" class="joy-blue-text font-semibold hover:underline">50/30/20 budget rule</a>.</li>
+                <li><strong>Schedule savings before you plan spending.</strong> Jordan moves $500 to savings the day after payday (about 16% of this example, not a rule you must hit). Spendable money is now $2,700. If you have to pull the $500 back every month, the number is too high. Lower it until it stays put.</li>
+                <li><strong>List the bills that pay themselves.</strong> Rent $1,400, utilities $160, insurance $90, phone $45, transit pass $80. That is $1,775. The $90 insurance is a bill, not part of the $500 savings, even if you set a yearly premium aside monthly. Flexible money is $2,700 − $1,775 = $925. If a card is how those bills or the leak categories get paid, do not list the card payment as well.</li>
+                <li><strong>Name only the leaks, and cap them inside the $925.</strong> Jordan’s surprises are restaurants and delivery, online shopping, and rides. Caps: $250, $120, and $80. Together that is $450. The other $475 is ordinary spending: groceries, household supplies, and small cash. It is not itemized.</li>
+                <li><strong>Decide the consequence before the month starts.</strong> When a cap is gone, that category stops, or you move a named amount from another cap the same day. “I’ll sort it out later” is how the cap becomes a suggestion. If you want that stop to feel like cash running out, use the <a href="/blog/envelope-system-digital-age.html" class="joy-blue-text font-semibold hover:underline">digital envelope system</a> for these few categories only.</li>
+                <li><strong>Put a 15-minute check on the calendar once a week.</strong> You are not reconstructing every purchase. You are answering three questions, below.</li>
+            </ol>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">What the week should look like</h3>
+            <p>
+                Halfway through Jordan’s example month, a reasonable picture is: savings transfer already gone, bills still matching the list, restaurant cap $110 remaining of $250, shopping $120 untouched, rides $55 remaining of $80, and about $260 of the $475 ordinary pot left. Nothing there requires a line for Thursday’s coffee.
             </p>
             <p>
-                A growing body of research in behavioral economics suggests that <strong>spending satisfaction matters more than spending amounts</strong>. A $5 coffee with a friend might bring you genuine joy. A $200 impulse purchase online might leave you feeling empty.
+                The weekly check asks:
             </p>
-            <div class="callout">
-                <strong>The insight:</strong> When you track the <em>emotional</em> outcome of purchases, you naturally start spending more on what makes you happy and less on what doesn't — without needing a strict budget.
-            </div>
+            <ul class="list-disc pl-6 space-y-2 mb-5">
+                <li>Did the savings transfer stay, or did I move it back?</li>
+                <li>Are any of the three caps already gone, or on pace to die a week early?</li>
+                <li>Is there a charge over a threshold I choose — Jordan uses $75 — that I do not remember making?</li>
+            </ul>
             <p>
-                This is the core philosophy behind <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a>. Instead of obsessing over every dollar, you tag each expense with an emotion: Joyful, Good, Okay or Regret. Over time, patterns emerge: you discover that experiences bring more joy than things, that cooking at home scores higher than takeout, that planned purchases feel better than impulse buys.
-            </p>
-            <p>
-                The result? Your spending naturally shifts toward what truly matters to you — no spreadsheets, strict budgets, or guilt required.
+                If the ordinary pot is disappearing in week two, groceries or “small” spending was the leak after all. Promote it to a watched category next month and drop the quietest of the original three. You still are not logging every penny. You changed which three lines matter.
             </p>
 
-            <h2 class="text-2xl font-bold text-slate-900">Which Approach Is Right for You?</h2>
+            <h2 class="text-2xl font-bold text-slate-900">Where to put the emphasis</h2>
             <p>
-                There's no single "best" method. The right approach depends on your personality:
+                The evening setup is the whole method. Lean harder on the piece you usually skip. If savings never survives the month, the payday transfer is the budget: Jordan’s $500 leaves before restaurants exist, and if you immediately move it back, shrink it until it lasts three paydays. If a category vanishes because the total is invisible, envelopes or caps for the $250, $120, and $80 are enough — rent does not need one when the bill already leaves. If every receipt app has made you quit, keep the leak list and the weekly pass only. Open the account once, on purpose, then close it. Daily peeking turns this back into penny tracking.
             </p>
 
             <div class="overflow-x-auto mb-5">
                 <table class="w-full text-sm border-collapse">
+                    <caption class="text-left text-sm font-semibold text-slate-700 mb-2">Which emphasis fits</caption>
                     <thead>
                         <tr class="bg-slate-50">
-                            <th class="text-left p-3 font-bold text-slate-900 border-b-2 border-slate-200">If you are…</th>
-                            <th class="text-left p-3 font-bold text-slate-900 border-b-2 border-slate-200">Try this method</th>
+                            <th class="text-left p-3 font-bold text-slate-900 border-b-2 border-slate-200">If you tend to…</th>
+                            <th class="text-left p-3 font-bold text-slate-900 border-b-2 border-slate-200">Emphasize</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b border-slate-100">
-                            <td class="p-3 font-medium">A set-it-and-forget-it type</td>
-                            <td class="p-3">Pay Yourself First</td>
+                            <td class="p-3">Forget to save until the month is gone</td>
+                            <td class="p-3">The payday transfer, small enough to leave alone</td>
                         </tr>
                         <tr class="border-b border-slate-100">
-                            <td class="p-3 font-medium">A visual, category-based thinker</td>
-                            <td class="p-3">Digital Envelopes</td>
+                            <td class="p-3">Spend a category because the total is invisible</td>
+                            <td class="p-3">Two or three envelopes or caps</td>
                         </tr>
                         <tr class="border-b border-slate-100">
-                            <td class="p-3 font-medium">An 80/20 optimizer</td>
-                            <td class="p-3">Anti-Budget</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="p-3 font-medium">A reflective, big-picture person</td>
-                            <td class="p-3">Weekly Check-In</td>
+                            <td class="p-3">Quit any app that wants every receipt</td>
+                            <td class="p-3">Leak categories only, plus the weekly pass</td>
                         </tr>
                         <tr>
-                            <td class="p-3 font-medium">Curious about your spending psychology</td>
-                            <td class="p-3">Emotion Tracking (JoySpend)</td>
+                            <td class="p-3">Hit the cap and still feel you wasted it</td>
+                            <td class="p-3">Emotion tags on those leaks, not on everything</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2 class="text-2xl font-bold text-slate-900">The Bottom Line</h2>
+            <h2 class="text-2xl font-bold text-slate-900">Common mistakes</h2>
+            <ul class="list-disc pl-6 space-y-2 mb-5">
+                <li><strong>Automating savings you claw back every week.</strong> A transfer that does not survive is not a plan. Lower it.</li>
+                <li><strong>Tracking “everything except coffee” and still logging dozens of rows.</strong> If the list has more than a handful of watched categories, you are back to penny tracking.</li>
+                <li><strong>Caps with no consequence.</strong> Raising the restaurant cap on day three means you do not have a cap.</li>
+                <li><strong>Checking every day “just this once.”</strong> The weekly appointment is what keeps the system light.</li>
+                <li><strong>Building the caps from gross pay.</strong> Use take-home, then subtract the bills, then cap what remains. Percentages of a salary you never see will not fit in the account.</li>
+                <li><strong>Counting a card payment on top of the purchase.</strong> Rent, insurance, and a restaurant cap already include those dollars. The payment that covers them is not another bill, and it is not extra debt payoff unless it pays down a balance you were already carrying.</li>
+                <li><strong>Calling this “no budget.”</strong> Unwatched spending inside a named pot, with a weekly look, is a budget. Spending with no transfer, no caps, and no look is not.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-slate-900">The leak inside a cap that “worked”</h2>
             <p>
-                The best budget is the one you'll actually stick with. If penny-level tracking works for you, great — keep doing it. But if the thought of logging every purchase fills you with dread, give yourself permission to take a simpler approach.
+                Jordan’s $250 restaurant cap can close the month with $8 left and still be a bad $242. The total only says the ceiling held. It does not say the meals were ones Jordan would buy again.
             </p>
             <p>
-                Focus on the big picture. Automate your savings. Track only what matters. And if you want to go deeper without the grind, try tracking how your spending makes you <em>feel</em> — you might be surprised at how quickly your habits change when you understand the emotions behind them.
+                Log the watched categories, and skip the rest. On each of those entries, tag how it felt: Joyful, Good, Okay, or Regret. <strong>Example only:</strong> of the $242, $70 is a dinner with a friend tagged Joyful, and $110 is late orders tagged Regret with a note that says “tired” or “stressed.” The other $62 is Okay — ordinary lunches Jordan does not regret and does not celebrate. The cap was fine. The tired-night orders are the leak, and they are almost half the category.
             </p>
             <p>
-                <a href="https://joyspend.tech/" class="joy-blue-text font-semibold hover:underline">JoySpend</a> makes emotion-aware tracking effortless — it's free to start, with optional paid tiers. Core tracking works offline and takes seconds per transaction. Give it a try and see what your spending says about you.
+                A week later, open those entries and ask “still worth it?” Update the tag if the feeling moved. The friend’s dinner may still be Joyful. A late order that felt like relief can look like Regret once you remember there was food at home. An Okay lunch does not need a second thought. You are re-rating the watched list, not your whole life.
             </p>
-        </div>
+            <p>
+                The notes are how a stressed or tired pattern becomes visible without a full diary. Once a week, read only the Regret tags and the notes on the leak categories. If the same kind of day keeps showing up, change the situation: food in the bag for the late shift, or a smaller cap that applies only to tired-day orders so they cannot spend the dinner that was tagged Joyful. The <a href="/blog/stop-impulse-buying-strategies.html" class="joy-blue-text font-semibold hover:underline">impulse-spending checklist</a> is a good pair for the orders that happen before you have decided anything.
+            </p>
+            <p>
+                You do not need a bank login to do this. In JoySpend you type the amount, category, and date, add a note when the day was stressful or you were worn out, and choose Joyful, Good, Okay, or Regret. New entries start on Joyful, so change the tag when that default is wrong. Core tracking, categories, and budgets are free. AI features are optional and paid. Tag the two or three leaks. Leave the coffee out.
+            </p>
+            <p>
+                Download JoySpend as <a href="https://apps.apple.com/app/joyspend/id6756809900" class="joy-blue-text font-semibold hover:underline">JoySpend: Expense Tracker on the App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.joyspend.app" class="joy-blue-text font-semibold hover:underline">JoySpend: Mood Expense Tracker on Google Play</a>.
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-900">Frequently asked questions</h2>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">If I skip small purchases, how do I know I am not overspending?</h3>
+            <p>
+                The payday transfer, the bill list, and the leak caps are the alarm. The ordinary pot is allowed to be fuzzy until it runs low early in the month. If it does, that pot becomes a watched category. You add a log when a category misbehaves, not before. Do not also count a credit-card payment for a purchase already listed as a bill or inside a cap. That payment is the same money, not a new expense.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">Which expenses are safe to leave untracked?</h3>
+            <p>
+                Bills you already know to the dollar, and small repeats that are not growing. The unsafe ones are the categories that have surprised you recently, plus any charge above a threshold you would not remember a week later. Jordan’s example uses $75. Pick a number that means something on your statement.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">How is this different from not budgeting?</h3>
+            <p>
+                Not budgeting is spending until the account is low, then wondering why. This version moves savings first, names a few caps with a consequence, and looks weekly. The missing receipts are a choice about attention, not an absence of a plan.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">How often should I review?</h3>
+            <p>
+                Once a week is enough for the three questions. Add a slightly longer look at the end of the month to see which cap, if any, should be replaced. Daily reviews reintroduce the habit you were trying to drop.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">Can I track feelings without logging every expense?</h3>
+            <p>
+                Yes. Tag only the leak categories. A month of restaurant and shopping tags will show a Regret cluster much faster than a complete ledger of groceries, transit, and rent. Re-open those few entries a week later and update the tag if “still worth it?” changed.
+            </p>
+
+            <h2 class="text-2xl font-bold text-slate-900">Keep reading</h2>
+            <ul class="list-disc pl-6 space-y-2 mb-5">
+                <li><a href="/blog/" class="joy-blue-text font-semibold hover:underline">All posts on the JoySpend blog</a></li>
+                <li><a href="/blog/50-30-20-budget-rule.html" class="joy-blue-text font-semibold hover:underline">The 50/30/20 budget rule, with a worked example</a></li>
+                <li><a href="/blog/envelope-system-digital-age.html" class="joy-blue-text font-semibold hover:underline">The envelope system in the digital age</a></li>
+                <li><a href="/blog/emotion-tracking-expenses.html" class="joy-blue-text font-semibold hover:underline">Why tracking emotions with expenses matters</a></li>
+            </ul>
+</div>
     </article>
 
     <!-- CTA -->
