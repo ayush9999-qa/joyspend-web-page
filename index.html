@@ -28,7 +28,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JoySpend — Expense Tracking with Emotion Insights</title>
-    <meta name="description" content="Track expenses, income and budgets for free. Understand how purchases feel with emotion tags, and add optional paid AI assistance with JoySpend.">
+    <meta name="description" content="Free expense, income, and budget tracking on your phone. No bank login. Tag how each purchase felt, then review spending by category, emotion, and time.">
     <meta name="keywords" content="expense tracker, budget, spending insights, emotion tracking, recurring transactions, multi-currency">
     <meta name="author" content="JoySpend">
     <meta name="application-name" content="JoySpend">
@@ -44,7 +44,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://joyspend.tech/">
     <meta property="og:title" content="JoySpend — Expense Tracking with Emotion Insights">
-    <meta property="og:description" content="Understand where your money goes and how purchases feel. Free core tracking, with optional paid AI assistance.">
+    <meta property="og:description" content="Free expense, income, and budget tracking on your phone. No bank login. Tag how each purchase felt, then review spending by category, emotion, and time.">
     <meta property="og:image" content="https://joyspend.tech/og-image.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
@@ -54,7 +54,7 @@
     <meta name="twitter:site" content="@JoySpend">
     <meta name="twitter:creator" content="@JoySpend">
     <meta name="twitter:title" content="JoySpend — Expense Tracking with Emotion Insights">
-    <meta name="twitter:description" content="Understand where your money goes and how purchases feel. Free core tracking, with optional paid AI assistance.">
+    <meta name="twitter:description" content="Free expense, income, and budget tracking on your phone. No bank login. Tag how each purchase felt, then review spending by category, emotion, and time.">
     <meta name="twitter:image" content="https://joyspend.tech/og-image.png">
     <meta name="twitter:image:alt" content="JoySpend — Track how every expense makes you feel">
 
@@ -173,6 +173,30 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Choose one of four emotions: Joyful, Good, Okay or Regret. New entries start with Joyful selected. The separate score is an amount-weighted average of expense emotions on a 5-point scale: Joyful 5, Good 3.75, Okay 2.5 and Regret 1.25. It summarizes your tags, rather than measuring happiness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can personalized spending alerts be tailored to flag emotional buying patterns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tailor an alert to the pattern, not to every purchase. Point it at one category that already surprises you, a time of day, or a feeling you have named, and set the threshold where that pattern usually starts. A late delivery after a stressful day is a useful flag. A ping on every coffee trains you to swipe it away. The flag only works if the purchase carries a label you trust, such as stress, boredom, or celebration. JoySpend does not connect to a bank and does not send transaction alerts. You log the purchase yourself, tag it Joyful, Good, Okay, or Regret, and add a note when the feeling mattered. Insights then show spending by category, emotion, and time, which you open when you want them. Optional Plus can explain spending you ask about. It does not watch an account and flag a purchase as it happens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What account features help spot emotional spending before it becomes a problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The useful features are a feeling recorded on the purchase, a view of those feelings next to categories over time, and a budget you can compare with the feeling. The early sign is a repeat: the same category, on the same kind of day, while it is still a few purchases. A month-end total arrives after the pattern has already spent the money. In JoySpend you enter the amount, category, and date, then choose Joyful, Good, Okay, or Regret. New entries start on Joyful, so change the tag when that is not what you felt. Free insights show spending by category, emotion, and time, with monthly and yearly breakdowns, and a Joy-Per-Spend Score that averages your tags by amount. Budgets can hold a limit per category. None of this uses a bank login. Core records stay on your phone unless you sign in for sync."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do spending trend visualizations help identify emotional triggers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A visualization shows a repeat across weeks, which one receipt cannot. When spending is drawn by category and by emotion over time, a spike that lines up with Regret, or with notes about stress, boredom, or a celebration, is a trigger you can name. The chart is the clue. The note is what the clue was about. JoySpend’s insights visualize spending by category, emotion, and time, including monthly and yearly breakdowns. You open that view yourself. It is not a live bank feed. A useful reading stays small: which emotion grew, in which category, in which part of the month. A hobby that stays Joyful can be large and still be doing its job. A smaller category that keeps landing on Regret is the trigger to look at, even when the month’s total looked fine."
       }
     }
   ]
@@ -724,8 +748,8 @@
         <div class="grid md:grid-cols-3 gap-6">
             <a href="/blog/emotion-tracking-expenses.html" class="flat-card p-6 rounded-app block hover:no-underline group">
                 <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3 block">Emotional Intelligence</span>
-                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Why Tracking Your Emotions With Expenses Matters</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Discover how pairing emotion tags with transactions can transform your financial well-being.</p>
+                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">What Transaction Insights Reveal About Emotional Spending</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Spending by emotion, by category, and over time: the views that show an emotional purchasing pattern.</p>
             </a>
             <a href="/blog/best-free-expense-tracker.html" class="flat-card p-6 rounded-app block hover:no-underline group">
                 <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3 block">App Reviews</span>
@@ -804,6 +828,36 @@
                 </button>
                 <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
                     Choose one of four emotions: Joyful, Good, Okay or Regret. New entries start with Joyful selected. The separate score is an amount-weighted average of expense emotions on a 5-point scale: Joyful 5, Good 3.75, Okay 2.5 and Regret 1.25. It summarizes your tags, rather than measuring happiness.
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors faq-toggle">
+                    <span>How can personalized spending alerts be tailored to flag emotional buying patterns?</span>
+                    <span class="text-slate-400 text-xl faq-icon shrink-0">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    <p class="mb-3">Tailor an alert to the pattern, not to every purchase. Point it at one category that already surprises you, a time of day, or a feeling you have named, and set the threshold where that pattern usually starts. A late delivery after a stressful day is a useful flag. A ping on every coffee trains you to swipe it away.</p>
+                    <p>The flag only works if the purchase carries a label you trust, such as stress, boredom, or celebration. JoySpend does not connect to a bank and does not send transaction alerts. You log the purchase yourself, tag it Joyful, Good, Okay, or Regret, and add a note when the feeling mattered. Insights then show spending by category, emotion, and time, which you open when you want them. Optional Plus can explain spending you ask about. It does not watch an account and flag a purchase as it happens.</p>
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors faq-toggle">
+                    <span>What account features help spot emotional spending before it becomes a problem?</span>
+                    <span class="text-slate-400 text-xl faq-icon shrink-0">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    <p class="mb-3">The useful features are a feeling recorded on the purchase, a view of those feelings next to categories over time, and a budget you can compare with the feeling. The early sign is a repeat: the same category, on the same kind of day, while it is still a few purchases. A month-end total arrives after the pattern has already spent the money.</p>
+                    <p>In JoySpend you enter the amount, category, and date, then choose Joyful, Good, Okay, or Regret. New entries start on Joyful, so change the tag when that is not what you felt. Free insights show spending by category, emotion, and time, with monthly and yearly breakdowns, and a Joy-Per-Spend Score that averages your tags by amount. Budgets can hold a limit per category. None of this uses a bank login. Core records stay on your phone unless you sign in for sync.</p>
+                </div>
+            </div>
+            <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                <button class="w-full text-left px-6 py-5 font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors faq-toggle">
+                    <span>How do spending trend visualizations help identify emotional triggers?</span>
+                    <span class="text-slate-400 text-xl faq-icon shrink-0">+</span>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-slate-500 text-sm leading-relaxed">
+                    <p class="mb-3">A visualization shows a repeat across weeks, which one receipt cannot. When spending is drawn by category and by emotion over time, a spike that lines up with Regret, or with notes about stress, boredom, or a celebration, is a trigger you can name. The chart is the clue. The note is what the clue was about.</p>
+                    <p>JoySpend’s insights visualize spending by category, emotion, and time, including monthly and yearly breakdowns. You open that view yourself. It is not a live bank feed. A useful reading stays small: which emotion grew, in which category, in which part of the month. A hobby that stays Joyful can be large and still be doing its job. A smaller category that keeps landing on Regret is the trigger to look at, even when the month’s total looked fine.</p>
                 </div>
             </div>
         </div>
